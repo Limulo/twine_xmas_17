@@ -126,7 +126,9 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
 
 
 
@@ -244,6 +246,7 @@ Lo chef consiglia di accompagnare il tutto con una bottiglia di vino rosso, il t
 &lt;&lt;cacheaudio &quot;radiotune&quot; &quot;media/audio/radio_tune.ogg&quot; &quot;media/audio/radio_tune.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;cheers&quot; &quot;media/audio/cheers.ogg&quot; &quot;media/audio/cheers.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;cork&quot; &quot;media/audio/cork.ogg&quot; &quot;media/audio/cork.mp3&quot;&gt;&gt;
+&lt;&lt;waitforaudio&gt;&gt;
 
 &lt;&lt;set $station1 to 0&gt;&gt;
 &lt;&lt;set $station2 to 0&gt;&gt;
@@ -296,11 +299,7 @@ I due interlocutori si alternano nel presentare le prossime uscite cinematografi
 
 La trasmissione ha un tono simpatico che ti mette a tuo agio. Le voci che ascolti sono rilassate e scherzose. Continui ad ascoltare fintatno che uno dei due non nomina un nome familiare.
 
-Un regista che conosci e del quale hai già sentito parlare. E&#39; da tempo che ti riproponi di approfondire la cosa. Prendi un appunto e ti rilassi contro lo schianale della poltrona.
-
-Pensi tra te che a volte la radio può davvero rivelarsi una interessante fonte di spunti.
-
-La ricetta è semplice e al contempo gustosa. Lo chef consiglia di accompagnare il tutto con una bottiglia di vino rosso, il tuo preferito.
+Un regista che conosci e del quale hai già sentito parlare. E&#39; da tempo che ti riproponi di approfondire la cosa. Prendi un appunto e ti rilassi contro lo schienale della poltrona.
 
 &lt;span id=&quot;event&quot;&gt;&lt;/span&gt;
 &lt;span id=&quot;alternative&quot;&gt;&lt;/span&gt;
@@ -380,14 +379,7 @@ Lo inviti a sedersi così cominciate ad intavolare una [[conversazione]].
 &lt;&lt;/timed&gt;&gt;\
 &lt;&lt;/timed&gt;&gt;\
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;/linkreplace&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="Passaggio senza titolo" tags="" position="2134.666666666667,264.66666666666663" size="100,100">Una frase che contine un &lt;&lt;linkreplace &quot;link&quot;&gt;&gt;\
-link\
-&lt;&lt;replace &quot;#more&quot;&gt;&gt;\
-	Nuovo testo proprio qui sotto
-&lt;&lt;/replace&gt;&gt;\
-&lt;&lt;/linkreplace&gt;&gt; e altro testo.
-
-&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="16" name="conversazione" tags="" position="1693.3333333333333,712.3333333333334" size="100,100">Di colpo ti tornano alla mente tanti episodi che coinvolgono te e l&#39;amico in luoghi lontani e molto diversi da casa.
+&lt;&lt;/linkreplace&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="conversazione" tags="" position="1693,712" size="100,100">Di colpo ti tornano alla mente tanti episodi che coinvolgono te e l&#39;amico in luoghi lontani e molto diversi da casa.
 
 Mentre parlate realizzi quanto sia trascorso dall&#39;ultima volta che vi siete incontrati.
 
@@ -409,7 +401,7 @@ e comuni amici.\
 &lt;&lt;/linkappend&gt;&gt;\
 &lt;&lt;/linkappend&gt;&gt;\
 &lt;&lt;/linkappend&gt;&gt;
-</tw-passagedata><tw-passagedata pid="17" name="cena" tags="" position="1693.3333333333333,862.3333333333334" size="100,100">Avvinandoti al piano di lavoro della cucina ti sovviene la &lt;&lt;linkreplace &quot;ricetta&quot;&gt;&gt;\
+</tw-passagedata><tw-passagedata pid="16" name="cena" tags="" position="1693,862" size="100,100">Avvinandoti al piano di lavoro della cucina ti sovviene la &lt;&lt;linkreplace &quot;ricetta&quot;&gt;&gt;\
 ricetta\
 &lt;&lt;replace &quot;#more&quot;&gt;&gt;\
 	La cena è servita in breve tempo.
@@ -443,7 +435,7 @@ ricetta\
 
 
 
- </tw-passagedata><tw-passagedata pid="18" name="brindisi" tags="" position="1693.3333333333333,1012.3333333333334" size="100,100">&lt;&lt;audio &quot;cheers&quot; volume 1.0 play&gt;&gt;
+ </tw-passagedata><tw-passagedata pid="17" name="brindisi" tags="" position="1693,1012" size="100,100">&lt;&lt;audio &quot;cheers&quot; volume 1.0 play&gt;&gt;
 
 Un brindisi a questa amicizia ritrovata.
 
@@ -455,17 +447,20 @@ Non ricordi affatto [[come si chiama|il nome]]!\
 &lt;&lt;/linkreplace&gt;&gt;\
 &lt;&lt;/timed&gt;&gt;
 
-</tw-passagedata><tw-passagedata pid="19" name="il nome" tags="" position="1693.3333333333333,1162.3333333333335" size="100,100">&lt;&lt;set _name to $names.pluck() &gt;&gt;\
+</tw-passagedata><tw-passagedata pid="18" name="il nome" tags="" position="1693,1162" size="100,100">&lt;&lt;set _name to $names.pluck() &gt;&gt;\
 &lt;&lt;if visited() is 1&gt;&gt;\
 	Era forse... &lt;&lt;timed 1s&gt;&gt;&lt;&lt;link _name &quot;passaggio&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;&lt;elseif visited() is 2&gt;&gt;\
-	Ce l&#39;hai sulla punta della lingua. &lt;&lt;timed 1s&gt;&gt; &lt;&lt;link _name &quot;passaggio&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;/timed&gt;&gt;
+	No! Ce l&#39;hai sulla punta della lingua. &lt;&lt;timed 1s&gt;&gt; &lt;&lt;link _name &quot;passaggio&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;&lt;elseif visited() is 3&gt;&gt;\
-	Cominciava per //c//. Probabilmente &lt;&lt;textbox &quot;$friendname&quot; &quot;...&quot; &quot;validate&quot;&gt;&gt;
+	Probabilmente cominciava per //c//, oppure no?
+	&lt;&lt;textbox &quot;$friendname&quot; &quot;...&quot; &quot;validate&quot;&gt;&gt;
 &lt;&lt;elseif visited() is 4&gt;&gt;\
-	Molto probabilmente finiva per //o//&lt;&lt;textbox &quot;$friendname&quot; &quot;...&quot; &quot;validate&quot;&gt;&gt;
+	No! Riproviamo, di sicuro finiva per //o//.
+	&lt;&lt;textbox &quot;$friendname&quot; &quot;...&quot; &quot;validate&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;\
-	Aspetta, ecco a chi si riferiva quell&#39;appunto &lt;&lt;textbox &quot;$friendname&quot; &quot;...&quot; &quot;validate&quot;&gt;&gt; che hai trovato poco fa sul tavolino.
+	No, ma aspetta. Ecco a chi si riferiva quell&#39;appunto trovato poco fa sul tavolino.
+	&lt;&lt;textbox &quot;$friendname&quot; &quot;...&quot; &quot;validate&quot;&gt;&gt; 
 &lt;&lt;/if&gt;&gt;
 
 
@@ -476,7 +471,7 @@ Non ricordi affatto [[come si chiama|il nome]]!\
 
 
 
- </tw-passagedata><tw-passagedata pid="20" name="passaggio" tags="" position="1898.3333333333335,1168" size="100,100">&lt;&lt;if visited() is 1&gt;&gt;\
+ </tw-passagedata><tw-passagedata pid="19" name="passaggio" tags="" position="1898,1168" size="100,100">&lt;&lt;if visited() is 1&gt;&gt;\
 	No, aspetta; non può essere. Quello è il nome del tuo panettiere.
 	&lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto &quot;il nome&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;&lt;elseif visited() is 2&gt;&gt;\
@@ -486,14 +481,14 @@ Non ricordi affatto [[come si chiama|il nome]]!\
 &lt;&lt;/if&gt;&gt;
 
 
-</tw-passagedata><tw-passagedata pid="21" name="validate" tags="" position="2035.0000000000002,1171.6666666666667" size="100,100">&lt;&lt;set $friendname to $friendname.toUpperFirst()&gt;&gt;
+</tw-passagedata><tw-passagedata pid="20" name="validate" tags="" position="2035,1171" size="100,100">&lt;&lt;set $friendname to $friendname.toUpperFirst()&gt;&gt;
 
 &lt;&lt;timed 1s&gt;&gt;&lt;&lt;if $friendname is $actualname&gt;&gt;
 	&lt;&lt;goto &quot;end&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
 	&lt;&lt;goto &quot;il nome&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-</tw-passagedata><tw-passagedata pid="22" name="end" tags="" position="2031.666666666667,1016.6666666666667" size="100,100">&lt;&lt;audio &quot;funin-sunin&quot; fadeoverto 5 0.0&gt;&gt;
+</tw-passagedata><tw-passagedata pid="21" name="end" tags="" position="2031,1016" size="100,100">&lt;&lt;audio &quot;funin-sunin&quot; fadeoverto 5 0.0&gt;&gt;
 @@.ego; &quot;Tanti Auguri $actualname&quot;@@ esclami infine un po&#39; affaticato.
 
 &lt;&lt;timed 2s t8n&gt;&gt;
