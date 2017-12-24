@@ -102,21 +102,41 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<div id="init-lacking">Your browser lacks required capabilities. Please upgrade it or switch to another to continue.</div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<div id="store-area" hidden><tw-storydata name="old-friend" startnode="1" creator="Twine" creator-version="2.2.1" ifid="DC8B954D-6D54-44FA-8108-A07B8487EB9D" zoom="0.6" format="SugarCube" format-version="2.21.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">#ui-bar {
+	<div id="store-area" hidden><tw-storydata name="old-friend" startnode="1" creator="Twine" creator-version="2.2.1" ifid="DC8B954D-6D54-44FA-8108-A07B8487EB9D" zoom="0.6" format="SugarCube" format-version="2.21.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {
+  background-color: CornflowerBlue ;
+  font-size: 1.3em;
+}
+
+#story {
+  margin-left: 15em;
+}
+
+a {
+  color: #EDBC64;
+  font-weight: bold
+}
+
+a:hover {
+  color: #C9A563;
+  text-decoration: none;
+}
+
+#ui-bar {
   display: none;
 }
 
 .ego {
-  color: red;
-  text-decoration: italic;
-  font-size: 1.2em;  
+  color: #cd18b5;
+  font-style: italic;
+  font-size: 1.1em;  
 }
 
 .friend {
-  color: green;
-  text-decoration: italic;
-  font-size: 1.2em;  
+  color: #108920;
+  font-style: italic;
+  font-size: 1.1em;  
 }
+
 
 
 
@@ -137,10 +157,11 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 
 
 
-</script><tw-passagedata pid="1" name="intro" tags="" position="203,64" size="100,100">E&#39; un pomeriggio uggioso.
+
+</script><tw-passagedata pid="1" name="intro" tags="" position="203,80.66666666666667" size="100,100">E&#39; un pomeriggio uggioso.
 &lt;&lt;timed 2s t8n&gt;&gt;
 Niente di particolare: non c&#39;è molto da fare e te ne stai seduto in poltrona guardando fuori dalla finestra.
-
+&lt;&lt;next&gt;&gt;
 Alla tua sinistra troneggia una &lt;&lt;linkappend &quot;vecchia radio. &quot;&gt;&gt;\
 Allunghi la mano per [[sintonizzarla|radio]], così...
 ...giusto per passare un po&#39; il tempo mentre fuori continua a piovere.&lt;&lt;/linkappend&gt;&gt;
@@ -148,10 +169,10 @@ Allunghi la mano per [[sintonizzarla|radio]], così...
 
 &lt;&lt;if $triptodoor is 1&gt;&gt;
 
-&quot;@@.ego;Chi sarà mai?@@&quot; ti domandi mentre ti dirigi alla porta d&#39;ingresso.
+@@.ego;&quot;Chi sarà mai?&quot;@@ ti domandi mentre ti dirigi alla porta d&#39;ingresso.
 
 Camminando fai velocemente mente locale per capire se non ti sia dimenticato di qualche appuntamento.
-&quot;@@.ego;Uhm...@@&quot;
+@@.ego;&quot;Uhm...&quot;@@
 
 Al momento non ti sovviene nulla.
 
@@ -162,7 +183,7 @@ Al momento non ti sovviene nulla.
 	&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;elseif $triptodoor is 2&gt;&gt;
-&quot;@@.ego;Di nuovo?@@&quot; ti ripeti - &quot;@@.ego;un altro scocciatore?@@&quot; 
+@@.ego;&quot;Di nuovo?&quot;@@ - ti ripeti - @@.ego;&quot;un altro scocciatore?&quot;@@ 
 
 	&lt;&lt;if $station1 is 1 &amp;&amp; $station2 is 1 &amp;&amp; $station3 is 1 &gt;&gt;
 		[[Apri la porta|porta3]]
@@ -171,7 +192,7 @@ Al momento non ti sovviene nulla.
 	&lt;&lt;/if&gt;&gt;
 	
 &lt;&lt;else&gt;&gt;
-&quot;@@.ego;Questa è l&#39;ultima volta!@@&quot; 
+@@.ego;&quot;Questa è l&#39;ultima volta!&quot;@@
 
 [[Apri la porta|porta3]]
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="radio" tags="" position="176,550" size="100,100">&lt;&lt;silently&gt;&gt;
@@ -185,62 +206,75 @@ L&#39;ago delle frequenza scivola sul quadrante luminoso.
 Ogni tanto, dalla statica emerge un segnale più nitido degli altri.
 
 Sono le frequenze:
-&lt;&lt;if $station1 eq 0&gt;&gt;[[97.80 |a]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $station2 eq 0&gt;&gt;[[115.01 |b]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $station3 eq 0&gt;&gt;[[76.90 |c]]&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="a" tags="" position="247,896" size="100,100">Sembra si tratti di un programma di [[cucina]]. Lo speaker introduce al programma e la ricetta per preparare un piatto gustoso.
+&lt;&lt;if $station1 eq 0&gt;&gt;[[97.80 FM|a]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $station2 eq 0&gt;&gt;[[115.01 FM|b]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $station3 eq 0&gt;&gt;[[76.90 FM|c]]&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="a" tags="" position="247,896" size="100,100">Sembra si tratti di un programma di [[cucina]]. Lo speaker introduce al programma e la ricetta per preparare un piatto gustoso.
 
 Al momento non hai molta fame.
-Cambi [[frequenza|radio]]: &quot;@@.ego; Vediamo se riesco a trovare qualcosa di diverso@@&quot; ti dici.</tw-passagedata><tw-passagedata pid="5" name="b" tags="" position="600,884" size="100,100">Sembra si tratti di un programma sul cinema.
+Cambi [[frequenza|radio]]: @@.ego;&quot;Vediamo se riesco a trovare qualcosa di diverso.&quot;@@ ti dici.</tw-passagedata><tw-passagedata pid="5" name="b" tags="" position="600,884" size="100,100">Sembra si tratti di un programma sul cinema.
 
-&quot;Bello&quot; - pensi tra te e te - &quot;sentiamo di [[cosa stanno parlando|cinema]]&quot;. In fondo è da qualche tempo che non ti guardi un buon film, magari ascolterai qualche consiglio sulle prossime uscite.
+@@.ego;&quot;Bello&quot;@@ - pensi tra te e te - @@.ego;&quot;sentiamo di [[cosa stanno parlando|cinema]]&quot;@@. In fondo è da qualche tempo che non ti guardi un buon film, magari ascolterai qualche consiglio sulle prossime uscite.
 
-O magari no, cambi [[frequenza|radio]]. Magari più tardi.</tw-passagedata><tw-passagedata pid="6" name="c" tags="" position="1081,876" size="100,100">Trasmettono un [[brano]] strumentale interessante...
+O magari no, cambi [[frequenza|radio]].</tw-passagedata><tw-passagedata pid="6" name="c" tags="" position="1081,876" size="100,100">Trasmettono un [[brano]] strumentale interessante...
 
-...anche se al momento non hai molta voglia di musica
+...anche se al momento non hai molta voglia di musica.
 
 &lt;&lt;timed 1s t8n&gt;&gt;\
 Guargi l&#39;orologio e poi torni al quadrante luminoso delle [[frequenze radio|radio]].
 &lt;&lt;/timed&gt;&gt;
 </tw-passagedata><tw-passagedata pid="7" name="cucina" tags="" position="86,1068" size="100,100">&lt;&lt;set $station1 to 1&gt;&gt;\
 Una voce, calda e impostata, saluta gli ascoltatori e subito dopo elenca con calma una serie di ingredienti.
-
+&lt;&lt;timed 3s t8n&gt;&gt;
 Recuperata carta e penna da sopra il tavolino prendi nota. 
-&quot;@@.ego;Non si sa mai@@&quot; - pensi - &quot;@@.ego;potrebbe venir comodo per ora di cena!@@&quot;.
-
+&lt;&lt;next 2s&gt;&gt;
+@@.ego;&quot;Non si sa mai&quot;@@ - pensi - &lt;&lt;next 1s&gt;&gt;@@.ego;&quot;potrebbe venir comodo per ora di cena!&quot;@@.
+&lt;&lt;next 3s&gt;&gt;
 La ricetta è semplice e al contempo gustosa. 
-
-&lt;&lt;timed 6s t8n&gt;&gt;
-Lo chef consiglia di accompagnare il tutto con una bottiglia di vino rosso, il tuo preferito.
+&lt;&lt;next 1s&gt;&gt;
+Lo chef consiglia di accompagnare il tutto con una bottiglia di vino rosso,&lt;&lt;next 2s&gt;&gt; il tuo preferito.
+&lt;&lt;/timed&gt;&gt;
 
 &lt;span id=&quot;event&quot;&gt;&lt;/span&gt;
 &lt;span id=&quot;alternative&quot;&gt;&lt;/span&gt;
-&lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;set _seconds to 0&gt;&gt;\
 &lt;&lt;silently&gt;&gt;
+
     &lt;&lt;repeat 1s&gt;&gt;
-        &lt;&lt;set _seconds to _seconds + 1&gt;&gt;
-        &lt;&lt;if _seconds is 9&gt;&gt;
-			&lt;&lt;audio &quot;doorbell&quot; play&gt;&gt;
-            &lt;&lt;replace &quot;#event&quot;&gt;&gt;
-				&lt;&lt;link &quot;Ding Dong: suonano alla porta&quot; &quot;ring&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;
-			&lt;&lt;/replace&gt;&gt;
-			&lt;&lt;if $station2 == 1 &amp;&amp; $station3 == 1 &gt;&gt;
-				&lt;&lt;stop&gt;&gt;
-			&lt;&lt;/if&gt;&gt;
+        &lt;&lt;set _seconds to _seconds+1&gt;&gt;
+        &lt;&lt;if _seconds is 14&gt;&gt;
+		&lt;&lt;audio &quot;doorbell&quot; play&gt;&gt;
+		&lt;&lt;replace &quot;#event&quot;&gt;&gt;&lt;&lt;link &quot;Ding Dong: suonano alla porta&quot; &quot;ring&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;/replace&gt;&gt;
+		&lt;&lt;if $station2 == 1 &amp;&amp; $station3 == 1 &gt;&gt;
+			&lt;&lt;stop&gt;&gt;
+		&lt;&lt;/if&gt;&gt;
 				
-		&lt;&lt;elseif _seconds is 10&gt;&gt;
-			&lt;&lt;replace &quot;#alternative&quot;&gt;&gt;&quot;@@.ego;Chi potrà mai essere?@@&quot; Non attendi nessuno.
-			&quot;@@.ego;Pazienza@@&quot; - ti ripeti - &quot;@@.ego;se ha bisogno suonerà di nuovo.@@&quot;
-			
-			Ti sei distratto solo per un momento e ti accorgi che, rimettendoti all&#39;ascolto, il programma radiofonico è terminato.
-			Poco male: &quot;@@.ego; vediamo cosa danno sulle [[altre frequenze|radio]]!@@&quot;
-			&lt;&lt;/replace&gt;&gt;
-     		&lt;&lt;stop&gt;&gt;
-        &lt;&lt;/if&gt;&gt;
+	&lt;&lt;elseif _seconds is 15&gt;&gt;
+		&lt;&lt;replace &quot;#alternative&quot;&gt;&gt;@@.ego;&quot;Chi potrà mai essere?&quot;@@ Non attendi nessuno.
+		@@.ego;&quot;Pazienza&quot;@@ - ti ripeti - @@.ego;&quot;se ha bisogno suonerà di nuovo.&quot;@@
+		&lt;&lt;timed 1s t8n&gt;&gt;	
+		Ti sei distratto solo per un momento e ti accorgi che, rimettendoti alla&#39;scolto, il programma radiofonico è terminato.
+		&lt;&lt;next 2s&gt;&gt;
+		Poco male @@.ego;&quot;vediamo cosa danno sulle [[altre frequenze|radio]]&quot;@@		
+		&lt;&lt;/timed&gt;&gt;
+		&lt;&lt;/replace&gt;&gt;
+		&lt;&lt;stop&gt;&gt;
+	&lt;&lt;/if&gt;&gt;
     &lt;&lt;/repeat&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
-</tw-passagedata><tw-passagedata pid="8" name="StoryInit" tags="" position="388,67" size="100,100">&lt;&lt;cacheaudio &quot;doorbell&quot; &quot;media/audio/doorbell.ogg&quot; &quot;media/audio/doorbell.mp3&quot;&gt;&gt;
+
+/%
+&lt;&lt;next 3s&gt;&gt;
+&lt;&lt;audio &quot;doorbell&quot; play&gt;&gt;
+&lt;&lt;link &quot;Ding Dong: suonano alla porta&quot; &quot;ring&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;
+@@.ego;&quot;Chi potrà mai essere?&quot;@@ Non attendi nessuno.
+@@.ego;&quot;Pazienza&quot;@@ - ti ripeti - @@.ego;&quot;se ha bisogno suonerà di nuovo.&quot;@@
+&lt;&lt;next 1s&gt;&gt;
+Ti sei distratto solo per un momento e ti accorgi che, rimettendoti all&#39;ascolto, il programma radiofonico è terminato.
+&lt;&lt;next 1s&gt;&gt;
+Poco male: @@.ego;&quot;Vediamo cosa danno sulle [[altre frequenze|radio]]!&quot;@@
+&lt;&lt;/timed&gt;&gt;
+%/</tw-passagedata><tw-passagedata pid="8" name="StoryInit" tags="" position="388,67" size="100,100">&lt;&lt;cacheaudio &quot;doorbell&quot; &quot;media/audio/doorbell.ogg&quot; &quot;media/audio/doorbell.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;doorclose&quot; &quot;media/audio/doorclose.ogg&quot; &quot;media/audio/doorclose.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;funin-sunin&quot; &quot;media/audio/Funin-and-Sunin.ogg&quot; &quot;media/audio/Funin-and-Sunin.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;radiotune&quot; &quot;media/audio/radio_tune.ogg&quot; &quot;media/audio/radio_tune.mp3&quot;&gt;&gt;
@@ -257,9 +291,9 @@ Lo chef consiglia di accompagnare il tutto con una bottiglia di vino rosso, il t
 &lt;&lt;set $actualname to &quot;Anselmo&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="brano" tags="" position="942,1085" size="100,100">&lt;&lt;audio &quot;funin-sunin&quot; loop volume 1.0 play&gt;&gt;
 &lt;&lt;set $station3 to 1&gt;&gt;
 
-Asolti la radio e ti alzi dalla poltrona avvicinandoti alle finestre. Da questa posizione si scorge meglio il cortile esterno, bagnato dalla pioggia. La strada è vuota e le fronde degli alberi sono leggermente sferzate da qualche folata di vento.
+Ascolti la radio e ti alzi dalla poltrona avvicinandoti alle finestre. Da questa posizione si scorge meglio il cortile esterno, bagnato dalla pioggia. La strada è vuota e le fronde degli alberi sono leggermente sferzate da qualche folata di vento.
 
-Il fianto si appanna sul vetro allora ti scosti leggermente dal vetro.
+Il fianto si appanna sul vetro allora ti scosti leggermente.
 E&#39; piacevole sapere di essere al caldo in una ambiente protetto specie in una giornata come questa.
 
 &lt;span id=&quot;event&quot;&gt;&lt;/span&gt;
@@ -269,7 +303,7 @@ E&#39; piacevole sapere di essere al caldo in una ambiente protetto specie in un
 &lt;&lt;silently&gt;&gt;
     &lt;&lt;repeat 1s&gt;&gt;
         &lt;&lt;set _seconds to _seconds + 1&gt;&gt;
-        &lt;&lt;if _seconds is 8&gt;&gt;
+        &lt;&lt;if _seconds is 15&gt;&gt;
 			&lt;&lt;audio &quot;doorbell&quot; play&gt;&gt;
 			
             &lt;&lt;replace &quot;#event&quot;&gt;&gt;
@@ -280,15 +314,13 @@ E&#39; piacevole sapere di essere al caldo in una ambiente protetto specie in un
 				&lt;&lt;stop&gt;&gt;
 			&lt;&lt;/if&gt;&gt;
 			
-		&lt;&lt;elseif _seconds is 10&gt;&gt;
+		&lt;&lt;elseif _seconds is 16&gt;&gt;
 			&lt;&lt;replace &quot;#alternative&quot;&gt;&gt;\
-			&quot;@@.ego;Chi potrà mai essere?@@&quot; Non attendi nessuno.
-			&lt;&lt;timed 2s t8n&gt;&gt;\
-		    &quot;@@.ego;Pazienza@@&quot; - ti ripeti - &quot;@@.ego;se c&#39;è qualcuno alla porta e ha bisogno, suonerà di nuovo.@@&quot;
-			
-			&lt;&lt;timed 2s t8n&gt;&gt;\
+			@@.ego;&quot;Chi potrà mai essere?&quot;@@ Non attendi nessuno.
+			&lt;&lt;timed 1s t8n&gt;&gt;\
+		    @@.ego;&quot;Pazienza&quot;@@ - ti ripeti - @@.ego;&quot;se c&#39;è qualcuno alla porta e ha bisogno, suonerà di nuovo.&quot;@@
+			&lt;&lt;next 2s&gt;&gt;
 			Ritorni [[altre tue frequenze|radio]]. 
-			&lt;&lt;/timed&gt;&gt;\
 			&lt;&lt;/timed&gt;&gt;\
 			&lt;&lt;/replace&gt;&gt;
         &lt;&lt;/if&gt;&gt;
@@ -296,65 +328,74 @@ E&#39; piacevole sapere di essere al caldo in una ambiente protetto specie in un
 &lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="cinema" tags="" position="500,1096" size="100,100">&lt;&lt;set $station2 to 1&gt;&gt;
 
 I due interlocutori si alternano nel presentare le prossime uscite cinematografiche.
-
-La trasmissione ha un tono simpatico che ti mette a tuo agio. Le voci che ascolti sono rilassate e scherzose. Continui ad ascoltare fintatno che uno dei due non nomina un nome familiare.
-
+&lt;&lt;timed 2s t8n&gt;&gt;
+La trasmissione ha un tono simpatico che ti mette a tuo agio. Le voci che ascolti sono rilassate e scherzose. Continui ad ascoltare fintanto che uno dei due non nomina un nome familiare.
+&lt;&lt;next 5s&gt;&gt;
 Un regista che conosci e del quale hai già sentito parlare. E&#39; da tempo che ti riproponi di approfondire la cosa. Prendi un appunto e ti rilassi contro lo schienale della poltrona.
-
+&lt;&lt;/timed&gt;&gt;
 &lt;span id=&quot;event&quot;&gt;&lt;/span&gt;
 &lt;span id=&quot;alternative&quot;&gt;&lt;/span&gt;
 
-&lt;&lt;set _seconds to 10&gt;&gt;\
+&lt;&lt;set _seconds to 0&gt;&gt;\
 &lt;&lt;silently&gt;&gt;
 
     &lt;&lt;repeat 1s&gt;&gt;
-        &lt;&lt;set _seconds to _seconds - 1&gt;&gt;
-        &lt;&lt;if _seconds is 1&gt;&gt;
+        &lt;&lt;set _seconds to _seconds+1&gt;&gt;
+        &lt;&lt;if _seconds is 12&gt;&gt;
 		&lt;&lt;audio &quot;doorbell&quot; play&gt;&gt;
 		&lt;&lt;replace &quot;#event&quot;&gt;&gt;&lt;&lt;link &quot;Ding Dong: suonano alla porta&quot; &quot;ring&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;/replace&gt;&gt;
 		&lt;&lt;if $station1 == 1 &amp;&amp; $station3 == 1 &gt;&gt;
 			&lt;&lt;stop&gt;&gt;
 		&lt;&lt;/if&gt;&gt;
-			
-		Ti sei distratto solo per un momento e ti accorgi che, rimettendoti all&#39;ascolto, il programma radiofonico è terminato.
-			
-	&lt;&lt;elseif _seconds is 0&gt;&gt;
-		&lt;&lt;replace &quot;#alternative&quot;&gt;&gt;&quot;@@.ego;Chi potrà mai essere?@@&quot; Non attendi nessuno.
-		&quot;@@.ego;Pazienza@@&quot; - ti ripeti - &quot;@@.ego;se ha bisogno suonerà di nuovo.@@&quot;
-			
+				
+	&lt;&lt;elseif _seconds is 13&gt;&gt;
+		&lt;&lt;replace &quot;#alternative&quot;&gt;&gt;@@.ego;&quot;Chi potrà mai essere?&quot;@@ Non attendi nessuno.
+		@@.ego;&quot;Pazienza&quot;@@ - ti ripeti - @@.ego;&quot;se ha bisogno suonerà di nuovo.@@&quot;
+		&lt;&lt;timed 1s t8n&gt;&gt;	
 		Ti sei distratto solo per un momento e ti accorgi che, rimettendoti alla&#39;scolto, il programma radiofonico è terminato.
-		Poco male &quot;@@.ego;vediamo cosa danno sulle [[altre frequenze|radio]]@@&quot;		
+		&lt;&lt;next 2s&gt;&gt;
+		Poco male @@.ego;&quot;vediamo cosa danno sulle [[altre frequenze|radio]]&quot;@@		
+		&lt;&lt;/timed&gt;&gt;
 		&lt;&lt;/replace&gt;&gt;
 		&lt;&lt;stop&gt;&gt;
 	&lt;&lt;/if&gt;&gt;
     &lt;&lt;/repeat&gt;&gt;
-&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="porta1" tags="" position="1100,170" size="100,100">Alla porta non c&#39;è nessuno!
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="porta1" tags="" position="1100,170" size="100,100">Ah, è il tuo vicino di casa. 
+Niente di importante sembrerebbe, ha semplicemente finito il sale.
+La cosa non ti disturba più di tanto. Gli presti una delle tue saliere prima di ritornare alla tua [[radio]].</tw-passagedata><tw-passagedata pid="12" name="porta2" tags="" position="1208,320" size="100,100">@@.ego;&quot;Ma che succede oggi?&quot;@@
+&lt;&lt;timed 1s t8n&gt;&gt;
+Di nuovo il tuo vicino. Ora sembra gli manchi anche il pepe.
+&lt;&lt;next 2s&gt;&gt;
+Vabbè, al momento avresti una gran voglia di dargli un pugno in faccia ma tant&#39;è.
+&lt;&lt;next 3s&gt;&gt;
+@@.ego;&quot;Eccoti il pepe&quot;@@
 
-&quot;@@.ego;Strano!@@&quot; pensi dentro di te mentre ritorni alla tua [[radio]].</tw-passagedata><tw-passagedata pid="12" name="porta2" tags="" position="1208,320" size="100,100">Di nuovo: non c&#39;è nessuno!
-
-&quot;@@.ego;Ma che succede? Qui c&#39;è qualche burlone che si diverte a farmi uno scherzo!@@&quot;
-
-&lt;&lt;timed 4s t8n&gt;&gt;
+Gli dici mentre gli porgi la tua pepiera.
+&lt;&lt;next 2s&gt;&gt;
+@@.ego;&quot;E non ti scordare di riportarmi tutto, intesi?&quot;@@
+&lt;&lt;next&gt;&gt;
 Ritorni alla tua [[radio]].
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="porta3" tags="" position="1505,371" size="100,100">&lt;&lt;audio &quot;funin-sunin&quot; fadeoverto 3 0.8&gt;&gt;
 
-&quot;@@.friend;Ciao!@@&quot;
+@@.friend;&quot;Ciao!&quot;@@
 
 &lt;&lt;timed 2s t8n&gt;&gt;\
 Esclama un volto conosciuto, fermo impassibile sull&#39;uscio di casa tua.
 
 &lt;&lt;timed 2s t8n&gt;&gt;\
-&quot;@@.friend;Come stai? Quanto tempo... ma come? non ti ricordi?@@&quot;
+@@.friend;&quot;Come stai? Quanto tempo... ma come? non ti ricordi?&quot;@@
 
 &lt;&lt;timed 2s&gt;&gt;\
 &lt;&lt;linkreplace &quot;Un attimo di panico&quot; t8n&gt;&gt;\
-Proprio in quel momento il suo volto si collega con una serie di ricordi persi nella tua memoria. Un vecchio amico che non rivedevi da tempo!\
+Sei preso alla sprovvista.
+
+Lo guardi attentamente e proprio in quel momento il suo volto si collega con una serie di ricordi persi nella tua memoria. Un vecchio amico che non rivedevi da tempo!\
 &lt;&lt;set _seconds to 0&gt;&gt;\
 &lt;&lt;repeat 1s&gt;&gt;\
 	&lt;&lt;set _seconds to _seconds + 1&gt;&gt;\
 	&lt;&lt;if _seconds is 4&gt;&gt;
 	  
-	  &quot;@@.ego;Ben ritrovati@@&quot; - esclami mentre [[lo inviti ad entrare|amico]].
+	  @@.ego;&quot;Ben ritrovati&quot;@@ - esclami mentre [[lo inviti ad entrare|amico]].
 	&lt;&lt;stop&gt;&gt;\
 	&lt;&lt;/if&gt;&gt;\
 &lt;&lt;/repeat&gt;&gt;\
@@ -371,13 +412,11 @@ Proprio in quel momento il suo volto si collega con una serie di ricordi persi n
 </tw-passagedata><tw-passagedata pid="14" name="amico" tags="" position="1690,499" size="100,100">Richiudi la porta alle &lt;&lt;linkreplace &quot;spalle&quot;&gt;&gt;spalle&lt;&lt;audio &quot;doorclose&quot; volume 1.0 play&gt;&gt;
 
 &lt;&lt;timed 1s t8n&gt;&gt;\
-&quot;@@.ego;Dammi pure il cappoto, mettiti comodo@@&quot;&lt;&lt;timed 2s t8n&gt;&gt;\
+@@.ego;&quot;Dammi pure il cappoto, mettiti comodo.&quot;@@&lt;&lt;next 2s&gt;&gt;\
 , dici rivolto a lui mentre entra timidamente nel soggiorno di casa.
 
-&lt;&lt;timed 2s t8n&gt;&gt;\
+&lt;&lt;next 2s&gt;&gt;\
 Lo inviti a sedersi così cominciate ad intavolare una [[conversazione]].
-&lt;&lt;/timed&gt;&gt;\
-&lt;&lt;/timed&gt;&gt;\
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/linkreplace&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="conversazione" tags="" position="1693,712" size="100,100">Di colpo ti tornano alla mente tanti episodi che coinvolgono te e l&#39;amico in luoghi lontani e molto diversi da casa.
 
@@ -388,7 +427,7 @@ Mentre parlate realizzi quanto sia trascorso dall&#39;ultima volta che vi siete 
 Assieme ripercorrete i momenti più divertenti &lt;&lt;linkappend &quot;passati assieme, &quot;&gt;&gt;\
 &lt;&lt;linkappend &quot;viaggi, &quot;&gt;&gt;\
 &lt;&lt;linkappend &quot;concerti, &quot;&gt;&gt;\
-&lt;&lt;linkappend &quot;libri&quot;&gt;&gt;\
+&lt;&lt;linkappend &quot;libri &quot;&gt;&gt;\
 e comuni amici.\
 
 &lt;&lt;timed 1s t8n&gt;&gt;
@@ -401,7 +440,7 @@ e comuni amici.\
 &lt;&lt;/linkappend&gt;&gt;\
 &lt;&lt;/linkappend&gt;&gt;\
 &lt;&lt;/linkappend&gt;&gt;
-</tw-passagedata><tw-passagedata pid="16" name="cena" tags="" position="1693,862" size="100,100">Avvinandoti al piano di lavoro della cucina ti sovviene la &lt;&lt;linkreplace &quot;ricetta&quot;&gt;&gt;\
+</tw-passagedata><tw-passagedata pid="16" name="cena" tags="" position="1693,862" size="100,100">Avvicinandoti al piano di lavoro della cucina ti sovviene la &lt;&lt;linkreplace &quot;ricetta&quot;&gt;&gt;\
 ricetta\
 &lt;&lt;replace &quot;#more&quot;&gt;&gt;\
 	La cena è servita in breve tempo.
@@ -411,7 +450,8 @@ ricetta\
 	&lt;&lt;linkreplace &quot;rosso&quot;&gt;&gt;rosso&lt;&lt;audio &quot;cork&quot; volume 1.0 play&gt;&gt;
 	&lt;&lt;timed 1s&gt;&gt;\
 	e ne versi due bicchieri.
-	&lt;&lt;timed 2s t8n&gt;&gt;
+	&lt;&lt;timed 1s t8n&gt;&gt;\
+	
 	[[Cin Cin!|brindisi]]
 	&lt;&lt;/timed&gt;&gt;\
 	&lt;&lt;/timed&gt;&gt;\
@@ -440,7 +480,7 @@ ricetta\
 Un brindisi a questa amicizia ritrovata.
 
 &lt;&lt;timed 1s t8n&gt;&gt;
-&quot;@@.friend; tanti auguri!@@&quot;, dice lui chiamandoti per nome.
+@@.friend;&quot;Tanti auguri!&quot;@@, dice lui chiamandoti per nome.
 
 &lt;&lt;linkreplace &quot;Un (altro) momento di panico&quot;.&gt;&gt;\
 Non ricordi affatto [[come si chiama|il nome]]!\
@@ -451,7 +491,7 @@ Non ricordi affatto [[come si chiama|il nome]]!\
 &lt;&lt;if visited() is 1&gt;&gt;\
 	Era forse... &lt;&lt;timed 1s&gt;&gt;&lt;&lt;link _name &quot;passaggio&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;&lt;elseif visited() is 2&gt;&gt;\
-	No! Ce l&#39;hai sulla punta della lingua. &lt;&lt;timed 1s&gt;&gt; &lt;&lt;link _name &quot;passaggio&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;/timed&gt;&gt;
+	No! Ce l&#39;hai sulla punta della lingua: &lt;&lt;timed 1s&gt;&gt; &lt;&lt;link _name &quot;passaggio&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;&lt;elseif visited() is 3&gt;&gt;\
 	Probabilmente cominciava per //c//, oppure no?
 	&lt;&lt;textbox &quot;$friendname&quot; &quot;...&quot; &quot;validate&quot;&gt;&gt;
@@ -459,7 +499,9 @@ Non ricordi affatto [[come si chiama|il nome]]!\
 	No! Riproviamo, di sicuro finiva per //o//.
 	&lt;&lt;textbox &quot;$friendname&quot; &quot;...&quot; &quot;validate&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;\
-	No, ma aspetta. Ecco a chi si riferiva quell&#39;appunto trovato poco fa sul tavolino.
+	No, ma aspetta. 
+	D&#39;improvviso ti ricordi di un vecchio //appunto// trovato all&#39;interno del taschino della giacca. 
+	Sopra era appuntato un nome, ma quale?
 	&lt;&lt;textbox &quot;$friendname&quot; &quot;...&quot; &quot;validate&quot;&gt;&gt; 
 &lt;&lt;/if&gt;&gt;
 
@@ -475,7 +517,8 @@ Non ricordi affatto [[come si chiama|il nome]]!\
 	No, aspetta; non può essere. Quello è il nome del tuo panettiere.
 	&lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto &quot;il nome&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;&lt;elseif visited() is 2&gt;&gt;\
-	Uhm... non ti sembra proprio. Questo nome ti suona familiare, sì. Ma ti ricorda un&#39;altra voce ed un altro viso. [[proviamo ancora!|il nome]]
+	Uhm... non ti sembra proprio. Questo nome ti suona familiare, sì. 
+	Ma ti ricorda un&#39;altra voce ed un altro viso. [[Proviamo ancora!|il nome]]
 	&lt;&lt;elseif visited() is 2&gt;&gt;\
 
 &lt;&lt;/if&gt;&gt;

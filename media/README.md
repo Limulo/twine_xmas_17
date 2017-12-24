@@ -14,7 +14,9 @@ All media files might have been modified to adapt them to the various situations
 * 'punch' by thefsoundman - [link](https://freesound.org/people/thefsoundman/sounds/118513/);
 * 'woosh' by toyoto - [link](https://freesound.org/people/toyoto/sounds/93758/);
 * 'clocktick' by InspectorJ - [link](https://freesound.org/people/InspectorJ/sounds/343130/);
-* 'telephone' by Benboncan - [link](https://freesound.org/people/Benboncan/sounds/62871/)
+* 'telephone' by Benboncan - [link](https://freesound.org/people/Benboncan/sounds/62871/);
+* 'creakingdoor' by urupin - [link](https://freesound.org/people/urupin/sounds/200988/);
+* 'wolf' by adrilahan - [link](https://freesound.org/people/adrilahan/sounds/172652/);
 
 ## music
 
