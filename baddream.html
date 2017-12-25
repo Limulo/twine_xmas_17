@@ -166,7 +166,9 @@ img {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
 
 
 
@@ -232,7 +234,7 @@ Ti volti verso il comodino con gli occhi ancora gonfi di sonno.
 &lt;&lt;set $success to 0&gt;&gt;
 &lt;&lt;set $wrong to 0&gt;&gt;
 
-</tw-passagedata><tw-passagedata pid="4" name="validate" tags="" position="653,255" size="100,100">DEBUG: (tocut: $tobecut, sel: $selected)
+</tw-passagedata><tw-passagedata pid="4" name="validate" tags="" position="928,242" size="100,100">DEBUG: (tocut: $tobecut, sel: $selected)
 DEBUG: attempts: $attempts
 
 
@@ -258,7 +260,7 @@ DEBUG: attempts: $attempts
 &lt;&lt;else&gt;&gt;
 	&lt;&lt;toggleclass &quot;#instruction&quot; &quot;blue&quot;&gt;&gt; 
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="test" tags="" position="510,254" size="100,100">&lt;&lt;set $tobecut to random(1)&gt;&gt;\
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="test" tags="" position="688,241" size="100,100">&lt;&lt;set $tobecut to random(1)&gt;&gt;\
 &lt;&lt;set $positive to random(1)&gt;&gt;\
 &lt;&lt;set _imageA to random(1)&gt;&gt;\
 &lt;&lt;set _imageB to 1 - _imageA&gt;&gt;\
@@ -310,19 +312,19 @@ Il capo.&lt;&lt;next&gt;&gt;\
  Rispondi:
 @@.ego;&quot;Sì, che c&#39;è?&quot;@@
 &lt;&lt;next 2s&gt;&gt;\
-@@.boss;&quot;..Nick senti. Qui siamo nella merda.@@
+@@.boss;&quot;...Nick senti. Qui siamo nella merda.@@
 &lt;&lt;next 2s&gt;&gt;\
-@@.boss;..abbiamo bisogno di te&quot;@@
+@@.boss;...abbiamo bisogno di te&quot;@@
 &lt;&lt;next&gt;&gt;\
 scosti l&#39;apparecchio, &lt;&lt;next&gt;&gt;[[imprechi!|dove]]&lt;&lt;next&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="sumup" tags="" position="798,255" size="100,100">&lt;&lt;set _score to $success/$maxattempts&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="sumup" tags="" position="1058,242" size="100,100">&lt;&lt;set _score to $success/$maxattempts&gt;&gt;
 DEBUG: score: _score.
 
 &lt;&lt;if _score gt $th&gt;&gt;
 	&lt;&lt;goto win&gt;&gt;
 &lt;&lt;else&gt;&gt;
 	&lt;&lt;goto loose&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="win" tags="" position="737,461" size="100,100">Ce l&#39;hai fatta Nick.
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="win" tags="" position="947,448" size="100,100">Ce l&#39;hai fatta Nick.
 Un&#39;altra tacca si aggiunge alla già nutrita lista.
 &lt;&lt;timed 1s t8n&gt;&gt;
 Raccogli le forbici e gli altri arnesi. Le tue ginocchia si lamentano mentre ti rialzi in piedi.
@@ -339,13 +341,13 @@ Ormai è quasi l&#39;alba, non hai dormito affatto e
 &lt;&lt;next 2s&gt;&gt;
 &lt;&lt;audio &quot;loop2&quot; fadeoverto 3s 0.0&gt;&gt;
 non ha ancora preso [[un caffè|end]]!
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="loose" tags="" position="507,450" size="100,100">&lt;&lt;audio &quot;loop2&quot; fadeoverto 5s 0.0&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="loose" tags="" position="717,437" size="100,100">&lt;&lt;audio &quot;loop2&quot; fadeoverto 5s 0.0&gt;&gt;
 La stanchezza ti ha sopraffatto questa volta.
 Un cavo reciso di troppo.
 
 [[BOOOM!!|end]]
 
-</tw-passagedata><tw-passagedata pid="11" name="end" tags="" position="617,643" size="100,100">The end</tw-passagedata><tw-passagedata pid="12" name="dove" tags="" position="124,497" size="100,100">@@.ego;&quot;Dove questa volta?&quot;@@
+</tw-passagedata><tw-passagedata pid="11" name="end" tags="" position="827,630" size="100,100">The end</tw-passagedata><tw-passagedata pid="12" name="dove" tags="" position="124,497" size="100,100">@@.ego;&quot;Dove questa volta?&quot;@@
 &lt;&lt;timed 1s t8n&gt;&gt;
 @@.boss;&quot;Il porto,@@
 &lt;&lt;next&gt;&gt;
@@ -362,7 +364,7 @@ Ti vesti in fretta. Raccogli i tuoi attrezzi e ti precipiti fuori casa.
 
 Impensabile usare il &lt;&lt;linkreplace &quot;taxi&quot;&gt;&gt;taxi&lt;&lt;replace &quot;#auto&quot;&gt;&gt;Prendi la tua auto e punti al [[porto]].&lt;&lt;/replace&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; a quest&#39;ora di notte.
 
-&lt;span id=&quot;auto&quot;&gt;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="14" name="porto" tags="" position="125,792" size="100,100">Una selva di luci lampeggianti sono già accampate di fronte al magazzino 27. 
+&lt;span id=&quot;auto&quot;&gt;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="14" name="porto" tags="" position="125,792" size="100,100">Una selva di luci lampeggianti è già accampata di fronte al magazzino 27. 
 Ci sono agenti di polizia tutt&#39;intorno.
 
 &lt;&lt;timed 2s&gt;&gt;\
@@ -374,7 +376,8 @@ Il tuo capo è già arrivato e ti si avvicina:
 &lt;&lt;next&gt;&gt;
 @@.boss;&quot;Eccoti Nick&quot;@@
 &lt;&lt;next 1s&gt;&gt;\
-Con il braccio indica una &lt;&lt;link &quot;piccola porta&quot;&gt;&gt;\
+Con il braccio indica una &lt;&lt;linkreplace &quot;piccola porta&quot;&gt;&gt;\
+piccola porta
 &lt;&lt;replace &quot;#ordigno&quot;&gt;&gt;\
 @@.boss;&quot;L&#39;ordigno è là dentro&quot;@@
 &lt;&lt;audio &quot;loop1&quot; fadeoverto 1 0.0&gt;&gt;\
@@ -383,15 +386,15 @@ Con il braccio indica una &lt;&lt;link &quot;piccola porta&quot;&gt;&gt;\
 Gli fai un cenno mentre ti incammini verso [[la porta]].
 &lt;&lt;/timed&gt;&gt;\
 &lt;&lt;/replace&gt;&gt;\
-&lt;&lt;/link&gt;&gt; di servizio sulla parete del grosso magazzino.
+&lt;&lt;/linkreplace&gt;&gt; di servizio sulla parete del grosso magazzino.
 &lt;&lt;/timed&gt;&gt;\
 &lt;span id=&quot;ordigno&quot;&gt;&lt;/span&gt;
-</tw-passagedata><tw-passagedata pid="15" name="la porta" tags="" position="294,798" size="100,100">Sbadigli.
+</tw-passagedata><tw-passagedata pid="15" name="la porta" tags="" position="403,799" size="100,100">Sbadigli.
 Sei ancora mezzo addormetato e intorpidito dal freddo pungente della notte.
 
 Attraversi la porta e seguendo i marcatori lasciati dagli agenti raggiungi la piccola stanza dove è stato ritrovato l&#39;ordigno.
 
-Ti chini sulle ginocchia e prepari gli attrezzi. Il capo ti chiama sul [[walkie talkie]].</tw-passagedata><tw-passagedata pid="16" name="walkie talkie" tags="" position="296,652" size="100,100">@@.boss;&quot;Dunque Nick, pronto?&quot;@@
+Ti chini sulle ginocchia e prepari gli attrezzi. Il capo ti chiama sul [[walkie talkie]].</tw-passagedata><tw-passagedata pid="16" name="walkie talkie" tags="" position="405,653" size="100,100">@@.boss;&quot;Dunque Nick, pronto?&quot;@@
 &lt;&lt;timed 1s t8n&gt;&gt;
 Rabbia! Ti verrebbe da mandarlo a quel paese.
 &lt;&lt;next 2s&gt;&gt;

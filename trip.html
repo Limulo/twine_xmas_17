@@ -146,6 +146,7 @@ a:hover {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">macros.initInv = {
   handler: function(place, macroName, params, parser) {
     state.active.variables.inventory = [];
@@ -194,6 +195,7 @@ macros.inv = {
     }
   }
 };
+
 
 
 
@@ -391,7 +393,7 @@ Verso sud invece gli alberi formano quasi un corridoio di rami e foglie.
 &lt;&lt;timed 3s t8n&gt;&gt;
 L&#39;//alba//!
 &lt;&lt;next 1s&gt;&gt;
-@@.ego;&quot;Che sollievo!2@@ Non ti sembra vero, pensi dentro di te mentri ti affretti in quella [[direzione|Uscita]].
+@@.ego;&quot;Che sollievo!&quot;@@ Non ti sembra vero, pensi dentro di te mentri ti affretti in quella [[direzione|Uscita]].
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="Uscita" tags="" position="1869,1395" size="100,100">&lt;&lt;if $inventory.indexOf(&quot;fiaccola&quot;) != -1&gt;&gt;\
 	&lt;&lt;removeFromInv &quot;fiaccola&quot;&gt;&gt;\
 	Spegni la fiaccola e getti via quanto ne rimane, \
