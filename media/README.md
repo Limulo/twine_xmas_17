@@ -14,3 +14,11 @@ All media files might be modified to adapt them to the various situations inside
 
 * 'Floating Cities' by [Incompetech](http://incompetech.com/wordpress/);
 * 'Funin and Sunin' by [Incompetech](http://incompetech.com/wordpress/);
+
+* Alien Restaurant Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 3.0 License
+http://creativecommons.org/licenses/by/3.0/
+
+* Alien Restaurant Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 3.0 License
+http://creativecommons.org/licenses/by/3.0/
