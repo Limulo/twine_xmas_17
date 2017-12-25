@@ -167,7 +167,9 @@ img {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
 
 
 
@@ -324,7 +326,8 @@ DEBUG: score: _score.
 	&lt;&lt;goto win&gt;&gt;
 &lt;&lt;else&gt;&gt;
 	&lt;&lt;goto loose&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="win" tags="" position="947,448" size="100,100">Ce l&#39;hai fatta Nick.
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="win" tags="" position="947,448" size="100,100">&lt;&lt;audio &quot;clocktick&quot; stop&gt;&gt;
+Ce l&#39;hai fatta Nick.
 Un&#39;altra tacca si aggiunge alla già nutrita lista.
 &lt;&lt;timed 1s t8n&gt;&gt;
 Raccogli le forbici e gli altri arnesi. Le tue ginocchia si lamentano mentre ti rialzi in piedi.
@@ -341,7 +344,8 @@ Ormai è quasi l&#39;alba, non hai dormito affatto e
 &lt;&lt;next 2s&gt;&gt;
 &lt;&lt;audio &quot;loop2&quot; fadeoverto 3s 0.0&gt;&gt;
 non ha ancora preso [[un caffè|end]]!
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="loose" tags="" position="717,437" size="100,100">&lt;&lt;audio &quot;loop2&quot; fadeoverto 5s 0.0&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="loose" tags="" position="717,437" size="100,100">&lt;&lt;audio &quot;clocktick&quot; stop&gt;&gt;
+&lt;&lt;audio &quot;loop2&quot; fadeoverto 5s 0.0&gt;&gt;
 La stanchezza ti ha sopraffatto questa volta.
 Un cavo reciso di troppo.
 
@@ -409,7 +413,10 @@ Rabbia! Ti verrebbe da mandarlo a quel paese.
 @@.boss;&quot;Quando vuoi Nick&quot;@@
 &lt;&lt;next 2s&gt;&gt;
 
-[[Si va in scena|test]]
+&lt;&lt;link &quot;Si va in scena&quot;&gt;&gt;
+&lt;&lt;audio &quot;clocktick&quot; volume 0.5 loop play&gt;&gt;
+&lt;&lt;goto test&gt;&gt;
+&lt;&lt;/link&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 </tw-passagedata><tw-passagedata pid="17" name="Copertina" tags="" position="308,169" size="100,100">[[Inizia|begin]]</tw-passagedata></tw-storydata></div>
 	<script id="script-sugarcube" type="text/javascript">
