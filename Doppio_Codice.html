@@ -130,11 +130,11 @@ button.link-internal.macro-button{
 @-webkit-keyframes typing { from { width: 0; } }
 @-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
 
-.chat { 
+.chat {
     font: bold 100% Consolas, Monaco, monospace;
   	color: white;
     border-right: none;
-    width: 1em; 
+    width: 1em;
     width: 70ch;
     margin: .5em .5em;
     white-space: nowrap;
@@ -166,7 +166,7 @@ button.link-internal.macro-button{
 }
 
 .partner{
-  color: deeppink;
+  color: orange;
 }
 
 .testo-mail{
@@ -212,7 +212,8 @@ h2.copertina  {
 
 
 
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">Config.history.controls=false;
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">//Config.history.controls=false;
 
 macros.initInv = {
   handler: function(place, macroName, params, parser) {
@@ -324,6 +325,7 @@ macros.seen = {
 
 
 
+
 </script><tw-passagedata pid="1" name="ufficio" tags="" position="835,98" size="100,100">&lt;&lt;audio &quot;initial_soundtrack&quot; unloop fadeoverto 0.2 0.0&gt;&gt;
 &lt;&lt;audio &quot;soundtrack&quot; volume 0.5 loop play&gt;&gt;
 &lt;span class=&quot;text&quot;&gt;gslsdmdsowpniowe893&gt;bjks%(&#39;GJKaskmsdn@afdaLAFjskdn%&amp;
@@ -334,42 +336,42 @@ ye9hsdosdodnjd9erjerjdje9jd9ìUy38hrehnsaiDADSEls€ç[#&lt;/span&gt;
 
 /% Non ho il manuale %/
 &lt;&lt;if $inventory.indexOf(&quot;il tuo manuale&quot;) == -1&gt;&gt;
-	Guardi fiss&lt;&lt;a-o&gt;&gt; il testo. Lo approcci con regole base di crittografia, ma niente, non ne ricavi nulla se non caratteri ancora più indecifrabili, se è 	possibile.
+	Guardi fiss&lt;&lt;a-o&gt;&gt; il testo. Lo approcci con regole base di crittografia ma niente, non ne ricavi nulla se non caratteri ancora più indecifrabili, se è possibile.
 	&lt;&lt;if visited() is 1&gt;&gt;
 		Forse c&#39;è qualche tecnica crittografica che non hai tenuto in considerazione. Sarebbe meglio controllare sul tuo manuale di riferimento.
 		Vai verso la &lt;&lt;linkappend &quot;libreria&quot;&gt;&gt;, ma ti accorgi che il tuo manuale non è al suo posto.
 				Dove puoi averlo lasciato?
 		[[Cerca nella sala 2|sala2]]
-		[[Prova in biblioteca|biblioteca]]		
+		[[Prova in biblioteca|biblioteca]]
 		&lt;&lt;/linkappend&gt;&gt;
 	&lt;&lt;else&gt;&gt;
-		Devi trovare il mauale.
+		Devi trovare il mauale. Non c&#39;è tempo da perdere.
 		[[Cerca in sala 2|sala2]]
 		[[Prova in biblioteca|biblioteca]]
 	&lt;&lt;/if&gt;&gt;
 	&lt;&lt;if visited(&quot;sala2&quot;) gt 2 and visited(&quot;armadietto&quot;) is 0&gt;&gt;
 		[[Vai a guardare nel tuo armadietto|armadietto]]&lt;&lt;/if&gt;&gt;
-	&lt;&lt;if $inventory.indexOf(&quot;un quaderno&quot;) != -1 and visited(&quot;armadietto&quot;) gt 0&gt;&gt;	Un appunto del&lt;&lt;la-&gt;&gt; tu&lt;&lt;npc-a-o&gt;&gt; partner sulla scrivania: &quot;Dove sei? Novità? Fatti sentire, non so dove sbattere la testa.&quot;
-	[[Forse il manuale è nell&#39;ufficio del tuo partner|ufficio-partner]]&lt;&lt;/if&gt;&gt;
-	&lt;&lt;if $seen.indexOf(&quot;un quaderno&quot;) != -1 and visited(&quot;armadietto&quot;) gt 0&gt;&gt;Un appunto del&lt;&lt;la-&gt;&gt; tu&lt;&lt;npc-a-o&gt;&gt; partner sulla scrivania: &quot;Dove sei? Novità? Fatti sentire, non so dove sbattere la testa.&quot;
-	[[Vai dal tuo partner per dirgli del quaderno|ufficio-partner]]
+	&lt;&lt;if $inventory.indexOf(&quot;un quaderno&quot;) != -1 and visited(&quot;armadietto&quot;) gt 0&gt;&gt;	Un appunto del&lt;&lt;la-&gt;&gt; tu&lt;&lt;npc-a-o&gt;&gt; partner sulla scrivania: @@.partner;&quot;Dove sei? Novità? Fatti sentire, non so dove sbattere la testa.&quot;@@
+	&lt;&lt;link &quot;Forse il manuale è nell&#39;ufficio $delTuo partner&quot; &quot;ufficio-partner&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;/if&gt;&gt;
+	&lt;&lt;if $seen.indexOf(&quot;un quaderno&quot;) != -1 and visited(&quot;armadietto&quot;) gt 0&gt;&gt;Un appunto del&lt;&lt;la-&gt;&gt; tu&lt;&lt;npc-a-o&gt;&gt; partner sulla scrivania: @@.partner;&quot;Dove sei? Novità? Fatti sentire, non so dove sbattere la testa.&quot;@@
+	&lt;&lt;link &quot;Vai $dalTuo partner per dirgli del suo quaderno&quot; &quot;ufficio-partner&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;
 	&lt;&lt;/if&gt;&gt;
 
 /% ho il manuale e ho chattato%/
 &lt;&lt;elseif visited(&quot;piano d&#39;azione&quot;) gt 0&gt;&gt;
 Tiri fuori tutti i tuoi appunti presi in queste ore, i risultati dei test fatti al computer, recuperi ogni testo possa tornarti utile, e vai in [[sala riunioni]]
-&lt;&lt;elseif visited(&quot;ufficio-xyz&quot;) is 1&gt;&gt;
-	[[telefona al tuo partner]]  
+&lt;&lt;elseif visited(&quot;ufficio-xyz&quot;) is 1&gt;&gt;La visita da K ti ha turbat&lt;&lt;a-o&gt;&gt;. Hai bisogno di parlare con &lt;&lt;il-la&gt;&gt; tu&lt;&lt;npc-a-o&gt;&gt; partner.
+	&lt;&lt;link &quot;Telefona $alTuo partner&quot; &quot;telefona al tuo partner&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;
 &lt;&lt;elseif visited(&quot;chat&quot;)&gt;&gt;
-	Oramai è passato quasi un giorno. Un giorno di analisi, test, prove. Tutte inutili. Quelle righe ti osservano dallo schermo del tuo computer, vicine eppure 	intoccabili.
-	Rifletti sulla situazione in cui vi trovate, tu, &lt;&lt;il-la&gt;&gt; tu&lt;npc-a-o&gt;&gt; partner e GHJ. 
+	Oramai è passato quasi un giorno. Un giorno di analisi, test, prove. Tutte inutili. Quelle righe ti osservano dallo schermo del tuo computer, vicine eppure intoccabili.
+	Rifletti sulla situazione in cui vi trovate, tu, &lt;&lt;il-la&gt;&gt; tu&lt;&lt;npc-a-o&gt;&gt; partner e G.
 	Basta. Ti alzi dalla sedia.
 	Sarebbe ora di chiedere qualche spiegazione in più.
-	[[Vai nell&#39;ufficio di XYZ|ufficio-xyz]]
-&lt;&lt;else&gt;&gt;Sfogli il tuo manuale ma non trovi alcuna informazione utile.
-	[[telefona al tuo partner]]
+	[[Vai nell&#39;ufficio di K|ufficio-xyz]]
+&lt;&lt;else&gt;&gt;Ti butti subito al lavoro. Per qualche ora cerchi forsennatamente nel tuo manuale qualche informazione che ti possa essere utile. Ma non ne trovi.
+&lt;&lt;link &quot;Telefona $alTuo partner&quot; &quot;telefona al tuo partner&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="sala2" tags="" position="689,267" size="100,100">&lt;&lt;if visited() is 1&gt;&gt;
-Vai nell&#39;aula dove stavi lavorando fino a qualche ora fa. Possibile sia qui? 
+Vai nell&#39;aula dove stavi lavorando fino a qualche ora fa. Possibile sia qui?
 Guardi lo &lt;&lt;linkappend &quot;scaffale&quot;&gt;&gt;
 Ma non lo trovi.
 Che non sia forse nella &lt;&lt;linkappend &quot;cassettiera&quot;&gt;&gt;
@@ -397,9 +399,9 @@ L&#39;armadietto! Non lo usi molto, preferisci portarti le tue cose sempre con t
 [[Prova a cercare in bibilioteca|biblioteca]]
 [[Guarda nel tuo armadietto|armadietto]]
 &lt;&lt;else&gt;&gt;
-La sala ora è occupata. 
-[[Torna nel tuo ufficio|ufficio]] 
-[[Guarda ancora in biblioteca|biblioteca]] 
+La sala ora è occupata.
+[[Torna nel tuo ufficio|ufficio]]
+[[Guarda ancora in biblioteca|biblioteca]]
 &lt;&lt;if visited(&quot;armadietto&quot;) is 0&gt;&gt;[[Vai a controllare nel tuo armadietto|armadietto]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -407,18 +409,18 @@ La sala ora è occupata.
 </tw-passagedata><tw-passagedata pid="3" name="biblioteca" tags="" position="823,318" size="100,100">&lt;&lt;if visited() is 1&gt;&gt;
 Cercare un libro in biblioteca... niente di più semplice e di più comlicato allo stesso tempo.
 
-Sarebbe tuttopiù semplice se la biblioteca avesse ua copia del tuo mauale, ma, ahime, è un&#39;edizione limitata e non si trova praticamente più in circolazione. Inoltre, ci sono i tuoi appunti a margine.
+Sarebbe tutto più semplice se la biblioteca avesse ua copia del tuo mauale, ma, //ahime//, è un&#39;edizione limitata e non si trova praticamente più in circolazione. Inoltre, sulla tua copia ci sono i tuoi appunti a margine.
 
-Hai frequentato la biblioteca recentemente per fare ricerca per il tuo precedente incarico. Magari hai portatola tua copia del manuale con te e l&#39;hai lasciata qui.
+Hai frequentato la biblioteca recentemente per fare ricerca per il tuo ultimo incarico. Magari hai portato la tua copia del manuale con te e l&#39;hai lasciata qui.
 
 Fortunatamente i posti in biblioteca sono fissi, ognuno ha un suo spazio e può lasciare qua le proprie cose.
 
 Vai verso la tua [[postazione]]
 &lt;&lt;else&gt;&gt;
 Qui il manuale non c&#39;è. Ricontrolli, ma non trovi niente di diverso
-[[Torna nel tuo|ufficio]] 
-[[Torna nella sala 2|sala2]] 
-&lt;&lt;if visited(&quot;armadietto&quot;) is 0 and visited(&quot;sala2&quot;) is 2&gt;&gt;[[Vai a guardare nel tuo armadietto|armadietto]]&lt;&lt;/if&gt;&gt;
+[[Torna nel tuo ufficio|ufficio]]
+&lt;&lt;if visited(&quot;sala2&quot;) gte 1&gt;&gt;[[Torna nella sala 2|sala2]]&lt;&lt;else&gt;&gt;[[Vai in sala 2|sala2]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if visited(&quot;armadietto&quot;) is 0 and visited(&quot;sala2&quot;) gte 2&gt;&gt;[[Vai a guardare nel tuo armadietto|armadietto]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 </tw-passagedata><tw-passagedata pid="4" name="armadietto" tags="" position="1345,252" size="100,100">&lt;&lt;if visited() is 1&gt;&gt;
@@ -435,10 +437,10 @@ Abbozzi un sorriso &quot;Grazie per il disturbo.&quot;
 Ora puoi [[guardare|dentro-amadietto]] cosa c&#39;è nel tuo armadietto.
 &lt;&lt;/if&gt;&gt;
 
-[[Torna in ufficio|ufficio]]
+/%[[Torna in ufficio|ufficio]]
 &lt;&lt;if visited(&quot;biblioteca&quot;) is 0&gt;&gt;[[Vai in biblioteca|biblioteca]]&lt;&lt;else&gt;&gt;
 [[Torna in bibilioteca|biblioteca]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if visited(&quot;sala2&quot;) is 0&gt;&gt;[[Vai in aula 2|sala2]]&lt;&lt;else&gt;&gt;[[Guarda ancora in aula 2|sala2]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if visited(&quot;sala2&quot;) is 0&gt;&gt;[[Vai in aula 2|sala2]]&lt;&lt;else&gt;&gt;[[Guarda ancora in aula 2|sala2]]&lt;&lt;/if&gt;&gt;%/
 
 </tw-passagedata><tw-passagedata pid="5" name="Utils" tags="widget" position="58,34" size="100,100">/% PC %/
 &lt;&lt;widget &quot;a-o&quot;&gt;&gt;&lt;&lt;if $pcSex eq &quot;m&quot;&gt;&gt;o&lt;&lt;elseif $pcSex eq &quot;f&quot;&gt;&gt;a&lt;&lt;else&gt;&gt;o&lt;&lt;/if&gt;&gt;&lt;&lt;/widget&gt;&gt;
@@ -451,52 +453,55 @@ Ora puoi [[guardare|dentro-amadietto]] cosa c&#39;è nel tuo armadietto.
 &lt;&lt;widget &quot;gli-le&quot;&gt;&gt;&lt;&lt;if $npcSex eq &quot;f&quot;&gt;&gt;le&lt;&lt;elseif $npcSex eq &quot;m&quot;&gt;&gt;gli&lt;&lt;else&gt;&gt;gli&lt;&lt;/if&gt;&gt;&lt;&lt;/widget&gt;&gt;
 &lt;&lt;widget &quot;Gli-Le&quot;&gt;&gt;&lt;&lt;if $npcSex eq &quot;f&quot;&gt;&gt;Le&lt;&lt;elseif $npcSex eq &quot;m&quot;&gt;&gt;Gli&lt;&lt;else&gt;&gt;Gli&lt;&lt;/if&gt;&gt;&lt;&lt;/widget&gt;&gt;
 &lt;&lt;widget &quot;lo-la&quot;&gt;&gt;&lt;&lt;if $npcSex eq &quot;f&quot;&gt;&gt;la&lt;&lt;elseif $npcSex eq &quot;m&quot;&gt;&gt;lo&lt;&lt;else&gt;&gt;lo&lt;&lt;/if&gt;&gt;&lt;&lt;/widget&gt;&gt;
-</tw-passagedata><tw-passagedata pid="6" name="Menu start" tags="" position="379,105" size="100,100">Come vuoi giocare? 
+</tw-passagedata><tw-passagedata pid="6" name="Menu start" tags="" position="379,105" size="100,100">&lt;h2&gt;Benvenuto!&lt;/h2&gt;
+&lt;h4&gt;Questa è una storia interattiva.
+Qui puoi compiere alcune scelte su come preferisci giocare&lt;/h4&gt;
 Puoi decidere di impersonare un uomo, una donna o non scegliere affatto.
 
 * Uomo &lt;&lt;radiobutton &quot;$pcSex&quot; &quot;m&quot;&gt;&gt;
 * Donna &lt;&lt;radiobutton &quot;$pcSex&quot; &quot;f&quot;&gt;&gt;
 * X &lt;&lt;radiobutton &quot;$pcSex&quot; &quot;x&quot; checked&gt;&gt;
 
-Ugualmente, puoi scegliere se il tuo partner sia uomo o donna, o se per te è indifferente.
+Ugualmente, puoi scegliere se il tuo partner è un uomo o una donna, o se per te è indifferente.
 
 * Uomo &lt;&lt;radiobutton &quot;$npcSex&quot; &quot;m&quot;&gt;&gt;
 * Donna &lt;&lt;radiobutton &quot;$npcSex&quot; &quot;f&quot;&gt;&gt;
 * X &lt;&lt;radiobutton &quot;$npcSex&quot; &quot;x&quot; checked&gt;&gt;
 
-[discalimer: nel caso non scegli nulla, verrà utilizzato il genere maschile]
+[Discalimer: nel caso non scegli nulla, verrà utilizzato il genere maschile]
 
-[[Inizia!|inizio]] 
+La freccia in alto a sinistra ti permette di aprire e chiudere un menu laterale. Puoi usarla o meno nel corso del gioco. A tua discrezione.
 
-&lt;&lt;script&gt;&gt;
-UIBar.unstow();
-&lt;&lt;/script&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="inizio" tags="" position="522,112" size="100,100">&lt;&lt;audio &quot;initial_soundtrack&quot; volume 0.5 loop play&gt;&gt;
+[[Inizia!|inizio]]
+</tw-passagedata><tw-passagedata pid="7" name="inizio" tags="" position="522,112" size="100,100">&lt;&lt;audio &quot;initial_soundtrack&quot; volume 0.5 loop play&gt;&gt;
 La porta si apre.
-&quot;Ci vogliono in sala riunioni. Subito.&quot;
+@@.partnet;&quot;Ci vogliono in sala riunioni. Subito.&quot;@@
 &quot;Sai di cosa si tratta?&quot; - chiedi al&lt;&lt;la-&gt;&gt; tu&lt;&lt;npc-a-o&gt;&gt; partner. La faccia è tesa.
-&quot;Non mi hanno detto nulla. Solo di sbrigarmi&quot;
+@@.partnet;&quot;Non mi hanno detto nulla. Solo di sbrigarmi&quot;@@
 
 Lasci il tuo lavoro e ti dirigi con &lt;&lt;lui-lei&gt;&gt;.
 
 Cammini svelt&lt;&lt;a-o&gt;&gt; nei corridoi, percepisci un&#39;insolita urgenza. Arrivi alla [[sala riunioni]] che quasi ti manca il fiato. Per la corsa e per l&#39;agitazione.</tw-passagedata><tw-passagedata pid="8" name="sala riunioni" tags="" position="669,109" size="100,100">&lt;&lt;if visited() is 1&gt;&gt;Ci siete solo voi due e il vostro superiore.
-Il sig. XYZ di solito sempre imperturbabile ora vi sembra vacillare.
+Mr K, di solito sempre imperturbabile, ora vi sembra vacillare.
 
-&quot;Cosa succede?&quot; chiede &lt;&lt;il-la&gt;&gt; tu&lt;&lt;npc-a-o&gt;&gt; partener.
-&quot;Sedetevi.&quot;
+@@.partner;&quot;Cosa succede?&quot;@@ chiede &lt;&lt;il-la&gt;&gt; tu&lt;&lt;npc-a-o&gt;&gt; partener.
+@@.xyz;&quot;Sedetevi.&quot;@@
 Prendete posto su due comode poltrone dirimpetto a lui. Sul tavolo che vi separa una montagna di fogli; a una rapida occhiata non sembrano scritti in alcuna lingua conosciuta.
 
-Mr. XYZ respira profondamente e inizia il racconto.
+Mr. K respira profondamente e inizia il racconto.
 
-//&lt;span class=&quot;racconto&quot;&gt;&quot;Ci è stato consegnato un messaggio, il mittente è sconosciuto. Non siete qui per rintracciare lui. Ma siete qui per decifrare il testo. 
+//&lt;span class=&quot;racconto&quot;&gt;&quot;Ci è stato consegnato un messaggio, il mittente è sconosciuto. Non siete qui per rintracciare lui. Ma siete qui per decifrare il testo.
 Non serve dirvi quanto sia importante capire subito di cosa si tratti e quanto il massimo riserbo sulla questione sia quantomai opportuno. Pena, la vostra carriera... come minimo&quot;&lt;/span&gt;//
 
 Raccogliete il materiale su cui dovete lavorare. E uscite.
-Vi dividerete il lavoro, lavorando in parallelo avrete più possibilità di cavarvela in tempo utile. 
-Lo sguardo di XYZ ti suggerisce che è meglio cominciare subito, quindi ritorni nel tuo [[ufficio]].
+Vi dividerete il lavoro, lavorando in parallelo avrete più possibilità di cavarvela in tempo utile.
+Lo sguardo di K ti suggerisce che è meglio cominciare subito, quindi ritorni nel tuo [[ufficio]].
 &lt;&lt;else&gt;&gt;
-Trascivi il testo del messaggio sulla lavagna bianca. 
+Siete di nuovo in sala riunioni.
+Ti senti stanc&lt;&lt;a-o&gt;&gt;, ma anche stimolat&lt;&lt;a-o&gt;&gt; da questa sfida. Trascivi il testo del messaggio sulla lavagna bianca.
 Nel giro di qualche ora tu e &lt;&lt;il-la&gt;&gt; tu&lt;&lt;npc-a-o&gt;&gt; partner riempite la lavagna di grafi, note, sezionate il testo in ogni sua parte.
-Ora avete un quadro più preciso di cosa il messaggio nasconda. 
+Grazie ai preziosi consigli di G ora avete un quadro più preciso di cosa possa nascondere il messaggio e come possiate affrontare il problema. E forse, con un po&#39; di fortuna, risolvere l&#39;enigma.
+Finita la fase di analisi, è tempo di vedere se le vostre ipotesi sono corrette.
 &quot;Ok, ognuno ai propri laboratori. Io mi occupo dei gruppi sillabici, tu dei singoli caratteri.&quot;
 &lt;span class=&quot;partner&quot;&gt;&quot;Va bene. Ci aggiorniamo ai primi risultati utili.&quot;&lt;/span&gt;
 Vi dirigete, ciascuno nei propri [[laboratori|laboratorio]]
@@ -512,25 +517,33 @@ Vi dirigete, ciascuno nei propri [[laboratori|laboratorio]]
 &lt;&lt;waitforaudio&gt;&gt;
 &lt;&lt;script&gt;&gt;
 UIBar.stow();
-&lt;&lt;/script&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="telefona al tuo partner" tags="" position="1680,85" size="100,100">&lt;&lt;if visited(&quot;chat&quot;) is 0&gt;&gt;
-&quot;Come procede?&quot; chiedi.
-&quot;A rilento...&quot; risponde &lt;&lt;lui-lei&gt;&gt;.
+&lt;&lt;/script&gt;&gt;
 
-&lt;&lt;if visited() is 1&gt;&gt;
+&lt;&lt;set $delTuo to &quot;del tuo&quot;&gt;&gt;
+&lt;&lt;if $npcSex eq &quot;f&quot;&gt;&gt;&lt;&lt;set $delTuo to &quot;della tua&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $alTuo to &quot;al tuo&quot;&gt;&gt;
+&lt;&lt;if $npcSex eq &quot;f&quot;&gt;&gt;&lt;&lt;set $alTuo to &quot;alla tua&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $dalTuo to &quot;dal tuo&quot;&gt;&gt;
+&lt;&lt;if $npcSex eq &quot;f&quot;&gt;&gt;&lt;&lt;set $dalTuo to &quot;dalla tua&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+</tw-passagedata><tw-passagedata pid="12" name="telefona al tuo partner" tags="" position="1680,85" size="100,100">&lt;&lt;if visited() is 1&gt;&gt;
+&quot;Come procede?&quot; chiedi.
+@@.partner;&quot;A rilento...&quot;@@ risponde &lt;&lt;lui-lei&gt;&gt;.
 [[&quot;Sto usando il manuale, ma non mi è utile&quot;|diag1]]
 &lt;&lt;elseif visited() is 2&gt;&gt;
 [[&quot;Mi stai dicendo che potrebbe essere una forma di lingua più che di un codice?&quot;|diag2-1]]
 &lt;&lt;elseif visited() is 3&gt;&gt;
 [[&quot;Mi fai sapere qualcosa quando hai i risultati?&quot;|diag2-2]]
-&lt;&lt;elseif visited() gt 3 and visited(&quot;diag2-1&quot;) is 1&gt;&gt;
-[[&quot;Possiamo parlare con GHJ, tra le altre cose si occupa anche di linguistica&quot;|diag2-3]]
+&lt;&lt;elseif visited() gt 3 and visited(&quot;diag2-1&quot;) is 1 and visited(&quot;ufficio-xyz&quot;) is 0&gt;&gt;
+Ora che ci penso, [[&quot;possiamo parlare con G, tra le altre cose si occupa anche di linguistica&quot;|diag2-3]]
+&lt;&lt;elseif visited(&quot;ufficio-xyz&quot;) is 1&gt;&gt;
+[[Ho parlato con K. Non ti sembra che ci stiano nascondendo qualcosa?|nascondendo]]
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;else&gt;&gt;
-[[Ho parlato con XYZ. Non ti sembra che ci stiano nascondendo qualcosa?|nascondendo]]
-&lt;&lt;/if&gt;&gt;
-</tw-passagedata><tw-passagedata pid="13" name="diag1" tags="" position="1632,238" size="100,100">//&lt;span class=&quot;partner&quot;&gt;&quot;Anche io ho provato a decifrare. Mi mancano ancora i risultati di alcuni test che ho fatto, ma sono poco fiducios&lt;&lt;npc-a-o&gt;&gt;.
 
-... e se sbagliassimo tutto? Se quello che abbiamo per le mani non fosse un codice nel senso più stretto del termine?&quot;&lt;/span&gt;// [[ti chiede|telefona al tuo partner]]</tw-passagedata><tw-passagedata pid="14" name="diag2-1" tags="" position="1762,241" size="100,100">//&lt;span class=&quot;partner&quot;&gt;&quot;Beh, onestamente non so cosa pensare. Abbiamo provato a lavorarci utilizzando tutti i mezzi a disposizione. I computer non hanno ricavato alcun dato utile, nessun algoritmo di decrittazone ha funzionato.
+</tw-passagedata><tw-passagedata pid="13" name="diag1" tags="" position="1632,238" size="100,100">//@@.partner;&quot;Anche io non so cosa fare. Ho provato a applicare alcune tecniche di decrittazione; mi mancano ancora i risultati di alcuni test che ho fatto, ma sono poco fiducios&lt;&lt;npc-a-o&gt;&gt;.@@//
+
+Fa una pausa, poi riprende
+
+//@@.partner;... e se sbagliassimo tutto? Se quello che abbiamo per le mani non fosse un codice nel senso più stretto del termine?&quot;@@// [[ti chiede|telefona al tuo partner]]</tw-passagedata><tw-passagedata pid="14" name="diag2-1" tags="" position="1762,241" size="100,100">//&lt;span class=&quot;partner&quot;&gt;&quot;Beh, onestamente non so cosa pensare. Abbiamo provato a lavorarci utilizzando tutti i mezzi a disposizione. I computer non hanno ricavato alcun dato utile, nessun algoritmo di decrittazone ha funzionato.
 Quindi, o dobbiamo sviluppare un nuovo algoritmo, oppure prendiamo in considerazione altre ipotesi.&quot;&lt;/span&gt;//
 
 Non ha tutti i torti, pensi.
@@ -546,9 +559,9 @@ Non ha tutti i torti, pensi.
 &quot;Certo.&quot;
 
 Chiudi la telefonata. Anche &lt;&lt;lui-lei&gt;&gt; brancola nel buio. Non è una buona notizia.
-Scrivi una mail a GHJ, in cui alleghi il messaggio e chiedi consulenza.
-Premi [[invio|mail]] </tw-passagedata><tw-passagedata pid="17" name="mail" tags="" position="2025,378" size="100,100">La mail è inviata. Intanto che aspetti una risposta, continui ad osservare il testo di fronte a te.
-Può una manciata di lettere essere davvero una minaccia? 
+Scrivi una mail a G, in cui alleghi il messaggio e chiedi consulenza.
+[[Invia la mail|mail]] </tw-passagedata><tw-passagedata pid="17" name="mail" tags="" position="2025,378" size="100,100">La mail è inviata. Intanto che aspetti una risposta, continui ad osservare il testo di fronte a te.
+Può una manciata di lettere essere davvero una minaccia?
 Inizia a insinuarsi il dubbio che non ti sia stato detto tutto su questa faccenda.
 &lt;span id=&quot;countdown&quot;&gt;&lt;/span&gt;
 &lt;&lt;set $seconds to 10&gt;&gt;\
@@ -561,28 +574,31 @@ Inizia a insinuarsi il dubbio che non ti sia stato detto tutto su questa faccend
         &lt;&lt;/if&gt;&gt;
     &lt;&lt;/repeat&gt;&gt;
 &lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="contenuto mail" tags="" position="474,364" size="100,100">&lt;div class=&quot;testo-mail&quot;&gt;Ciao,
-il caso è molto interessante. Non posso muovermi dal laboratorio, se vuoi ti contatto in chat.&lt;/div&gt;
+il caso è molto interessante. Non posso muovermi dal laboratorio, se vuoi ti contatto in chat.
+G.&lt;/div&gt;
 
-Apri la [[chat]]</tw-passagedata><tw-passagedata pid="19" name="chat" tags="" position="474,514" size="100,100">&lt;&lt;if visited() is 1&gt;&gt;
+Apri la [[chat]]</tw-passagedata><tw-passagedata pid="19" name="chat" tags="" position="474,514" size="100,100">&lt;p style=&quot;font-family: Courier New, monospace;&quot;&gt;&lt;&lt;if visited() is 1&gt;&gt;
 &gt; Ciao, eccomi qui.
-[[Invio|GHJ-chat-1]]
+&lt;&lt;button &quot;Invio&quot; &quot;GHJ-chat-1&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;elseif visited() is 2&gt;&gt;
-&gt; eh si! :) ci serveil tuo aiuto
-[[Invio|GHJ-chat-2]]
+&gt; eh si! :) ci serve il tuo aiuto
+&lt;&lt;button &quot;Invio&quot; &quot;GHJ-chat-2&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;elseif visited() is 3&gt;&gt;
 &gt; pensi di poterli fare questi test?
-[[Invio|GHJ-chat-3]]
+&lt;&lt;button &quot;Invio&quot; &quot;GHJ-chat-3&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;elseif visited() is 4&gt;&gt;
 &gt; Grazie!!! Aspetto tue notizie allora
-[[Invio|GHJ-chat-4]]
+&lt;&lt;button &quot;Invio&quot; &quot;GHJ-chat-4&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;elseif visited() is 5&gt;&gt;
 &gt; ciao e grazie ancora...
-[[Invio|ufficio]]
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;button &quot;Invio&quot; &quot;ufficio&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;/if&gt;&gt;&lt;/p&gt;
 
-</tw-passagedata><tw-passagedata pid="20" name="GHJ-chat-1" tags="" position="301,664" size="100,100">&lt;p class=&quot;chat&quot;&gt;Ciao,&lt;/p&gt;
-&lt;p class=&quot;chat&quot;&gt;bel casino che vi siete ritrovati&lt;/p&gt;
-[[&gt;|chat]]</tw-passagedata><tw-passagedata pid="21" name="GHJ-chat-2" tags="" position="415,660" size="100,100">&lt;p class=&quot;chat&quot;&gt;Per capire se si tratta di una lingua&lt;/p&gt;
+
+</tw-passagedata><tw-passagedata pid="20" name="GHJ-chat-1" tags="" position="301,664" size="100,100">&lt;&lt;timed 1s&gt;&gt;&lt;p class=&quot;chat&quot;&gt;Ciao,&lt;/p&gt;
+&lt;&lt;next 2s&gt;&gt;&lt;p class=&quot;chat&quot;&gt;bel casino che vi siete ritrovati&lt;/p&gt;
+&lt;&lt;next 4s&gt;&gt;[[&gt;|chat]]
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="GHJ-chat-2" tags="" position="415,660" size="100,100">&lt;p class=&quot;chat&quot;&gt;Per capire se si tratta di una lingua&lt;/p&gt;
 &lt;&lt;timed 4s&gt;&gt;&lt;p class=&quot;chat&quot;&gt;bisogna svolgere analisi statistiche&lt;/p&gt;
 &lt;&lt;next&gt;&gt;&lt;p class=&quot;chat&quot;&gt;sulla distribuzione di gruppi di lettere.&lt;/p&gt;
 &lt;&lt;next&gt;&gt;&lt;p class=&quot;chat&quot;&gt;Se gruppi di lettere si ripetono&lt;/p&gt;
@@ -591,29 +607,29 @@ Apri la [[chat]]</tw-passagedata><tw-passagedata pid="19" name="chat" tags="" po
 
 &lt;&lt;next 6s&gt;&gt;[[&gt;|chat]]
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="GHJ-chat-3" tags="" position="526,659" size="100,100">&lt;&lt;timed 2s&gt;&gt;&lt;p class=&quot;chat&quot;&gt;Come ben sai non sono un esperto&lt;/p&gt;
-&lt;&lt;next&gt;&gt;&lt;p class=&quot;chat&quot;&gt;ma conosco qualcuno che mi può aiutare&lt;/p&gt;
-&lt;&lt;next&gt;&gt;&lt;p class=&quot;chat&quot;&gt;Ti mando i risultati via mail&lt;/p&gt;
-&lt;&lt;next&gt;&gt;[[&gt;|chat]]
+&lt;&lt;next 4s&gt;&gt;&lt;p class=&quot;chat&quot;&gt;ma conosco qualcuno che mi può aiutare&lt;/p&gt;
+&lt;&lt;next 4s&gt;&gt;&lt;p class=&quot;chat&quot;&gt;Ti mando i risultati via mail&lt;/p&gt;
+&lt;&lt;next 4s&gt;&gt;[[&gt;|chat]]
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="GHJ-chat-4" tags="" position="656,664" size="100,100">&lt;&lt;timed 2s&gt;&gt;&lt;p class=&quot;chat&quot;&gt;Bene. Se serve altro sono qui.&lt;/p&gt;
-&lt;&lt;next&gt;&gt;[[&gt;|chat]]
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="ufficio-xyz" tags="" position="1840,456" size="100,100">XYZ ti riceve, ma si vede subito che non vorrebbe che tu fossi lì.
+&lt;&lt;next 4s&gt;&gt;[[&gt;|chat]]
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="ufficio-xyz" tags="" position="1840,456" size="100,100">K ti riceve, ma si vede subito che non vorrebbe che tu fossi lì.
 
-&quot;Cosa c&#39;è?&quot; chiede.
+@@.xyz;&quot;Cosa c&#39;è?&quot;@@ chiede.
 &quot;Mi domando se ci avete messo nelle condizioni ideali per lavorare.&quot;
-&quot;Ovvero? Quali sarebbero queste condizioni?&quot;
+@@.xyz;&quot;Ovvero? Quali sarebbero queste condizioni?&quot;@@
 &quot;Contesto, un quadro più ampio delle circostanze. Non potete venire a dirci &#39;Ci hanno dato un messaggio. Potrebbe essere in codice. Potrebbe essere una minaccia.&#39;. I mezzi a nostra disposizione non danno risultati. Stiamo pensando addirittura possa trattarsi di...&quot; ti blocchi. La frustrazione ha preso il sopravvento.
-Ma lo sguardo di XYZ si fa interessato. 
-&quot;Di cosa pensate possa trattarsi?&quot; chiede.
+Ma lo sguardo di K si fa interessato.
+@@.xyz;&quot;Di cosa pensate possa trattarsi?&quot;@@ chiede.
 &quot;Niente, una supposizione.&quot;
-&quot;Ditela.&quot;
-&quot;Una sorta di lingua&quot; 
+@@.xyz;&quot;Ditela.&quot;@@
+&quot;Una sorta di lingua&quot;
 
-Il suo volto è indecifrabile. Non ti dirà nulla di utile, meglio tornare nel tuo [[ufficio]].</tw-passagedata><tw-passagedata pid="25" name="lasci-quaderno" tags="" position="649,481" size="100,100">&lt;&lt;addToSeen &quot;un quaderno&quot;&gt;&gt;Hai altro a cui pensare. &lt;&lt;gli-le&gt;&gt; dirai che l&#39;hai trovato appena possibile.
+Il suo volto è indecifrabile. Non ti dirà nulla di utile, meglio tornare nel tuo [[ufficio]].</tw-passagedata><tw-passagedata pid="25" name="lasci-quaderno" tags="" position="649,481" size="100,100">&lt;&lt;addToSeen &quot;un quaderno&quot;&gt;&gt;Hai altro a cui pensare. &lt;&lt;Gli-Le&gt;&gt; dirai che l&#39;hai trovato appena possibile.
 
 [[Continua a cercare|sala2]]
 [[Torna in ufficio|ufficio]]
 [[Vai in bibilioteca|biblioteca]]
-[[Cerca nell&#39;armadietto|armadietto]]</tw-passagedata><tw-passagedata pid="26" name="raccogli-quaderno" tags="" position="783,481" size="100,100">&lt;&lt;addToInv &quot;un quaderno&quot;&gt;&gt;
+&lt;&lt;if visited(&quot;sala2&quot;) gt 1&gt;&gt;[[Cerca nell&#39;armadietto|armadietto]]&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="raccogli-quaderno" tags="" position="783,481" size="100,100">&lt;&lt;addToInv &quot;un quaderno&quot;&gt;&gt;
 Glielo riporterai appena possibile
 
 [[Continua a cercare|sala2]]
@@ -621,15 +637,15 @@ Glielo riporterai appena possibile
 [[Vai in bibilioteca|biblioteca]]
 &lt;&lt;if visited(&quot;sala2&quot;) gte 2&gt;&gt;
 [[Cerca nell&#39;armadietto|armadietto]]&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="postazione" tags="" position="961,564" size="100,100">
-Sul tuo banco ci sono alcuni tomi, quaderni, matite. 
-Sposti i &lt;&lt;linkappend &quot;fogli&quot;&gt;&gt; ma ninete di utile si nasconde sotto di essi. 
-&lt;&lt;linkreplace &quot;E questo? Cos&#39;è?&quot;&gt;&gt;Un piccolo cacciavite di precisione del tuo set emerge fra le carte. L&#39;hai usato per sistemare il tuo computer due giorni fa. 
+Sul tuo banco ci sono alcuni tomi, quaderni, matite.
+Sposti i &lt;&lt;linkappend &quot;fogli&quot;&gt;&gt; ma ninete di utile si nasconde sotto di essi.
+&lt;&lt;linkreplace &quot;E questo? Cos&#39;è?&quot;&gt;&gt;Un piccolo cacciavite di precisione del tuo set emerge fra le carte. L&#39;hai usato per sistemare il tuo computer due giorni fa.
 [[Prendi il cacciavite|prendiCacciavite]] o lo [[lasci qui|lasciCacciavite]]?
 &lt;&lt;/linkreplace&gt;&gt;&lt;&lt;/linkappend&gt;&gt;
 
 
 
-</tw-passagedata><tw-passagedata pid="28" name="ufficio-partner" tags="" position="1130,805" size="100,100">Vai nell&#39;ufficio del&lt;&lt;la-&gt;&gt; tu&lt;&lt;npc-a-o&gt;&gt; partner. 
+</tw-passagedata><tw-passagedata pid="28" name="ufficio-partner" tags="" position="1130,805" size="100,100">Vai nell&#39;ufficio del&lt;&lt;la-&gt;&gt; tu&lt;&lt;npc-a-o&gt;&gt; partner.
 &lt;&lt;if $inventory.indexOf(&quot;un quaderno&quot;) != -1&gt;&gt;
 &quot;Ho trovato questo&quot; &lt;&lt;gli-le&gt;&gt; dici, dando&lt;&lt;gli-le&gt;&gt; il quaderno che hai trovato in sala 2.
 
@@ -642,7 +658,7 @@ Sposti i &lt;&lt;linkappend &quot;fogli&quot;&gt;&gt; ma ninete di utile si nasc
 &quot;In un cassetto in sala 2...&quot;
 
 &lt;span class=&quot;partner&quot;&gt;&quot;E tu cosa ci facevi in sala 2?&quot;&lt;/span&gt;
-&quot;Sto cercando il mio manuale di crittografia... sto impazzendo. Ho anche fatto a pezzi il mio armadietto!&quot;&lt;/span&gt;
+&quot;Sto cercando il mio manuale di crittografia... sto impazzendo. Ho anche fatto a pezzi il mio armadietto!&quot;
 
 &lt;span class=&quot;partner&quot;&gt;&quot;Lo hai lasciato qui da me. E&#39; lì, nella mia libreria.&quot;&lt;/span&gt;
 
@@ -669,12 +685,12 @@ Nel corso della tua storia &lt;&lt;if$seen.length == 0&gt;&gt;non hai osservato 
 Una delle due chiavi è errata. [[Riprova|the end]]
 &lt;&lt;/if&gt;&gt;
 
-</tw-passagedata><tw-passagedata pid="31" name="Usa il cacciavite per smontare l&#39;armadietto" tags="" position="1352,442" size="100,100">Riesci a svitare le viti che agganciano la serratura alla placca metallica. Ma qualcosa si è incastrato e non riesci a estrarre il meccanismo. 
+</tw-passagedata><tw-passagedata pid="31" name="Usa il cacciavite per smontare l&#39;armadietto" tags="" position="1352,442" size="100,100">Riesci a svitare le viti che agganciano la serratura alla placca metallica. Ma qualcosa si è incastrato e non riesci a estrarre il meccanismo.
 Hai bisogno di un aiuto.
 
 [[Cerchi aiuto|inserviente]]</tw-passagedata><tw-passagedata pid="32" name="Cerchi aiuto per aprire l&#39;armadietto" tags="" position="1567,445" size="100,100">Vai sicur&lt;&lt;a-o&gt;&gt; verso lo sgabuzzino della manutenzione. Fortunatamente scorgi il custode che sta uscendo proprio in quel momento con una cassetta degli attrezzi in mano.
 
-[[Gli chiedi aiuto|inserviente]]</tw-passagedata><tw-passagedata pid="33" name="inserviente" tags="" position="1480,640" size="100,100">&quot;Mi sscusi&quot;, chiedi al custode, &quot;ho bisogno di una mano per aprire il mio armadietto. La serratura si è incastrata e...&quot;
+[[Gli chiedi aiuto|inserviente]]</tw-passagedata><tw-passagedata pid="33" name="inserviente" tags="" position="1480,640" size="100,100">&quot;Mi scusi&quot;, chiedi al custode, &quot;ho bisogno di una mano per aprire il mio armadietto. La serratura si è incastrata e...&quot;
 
 Il custode sbuffa. &lt;span class=&quot;inserviente&quot;&gt;&quot;Io avrei del lavoro da fare... posso pensarci più tardi...&quot;&lt;/span&gt;
 
@@ -683,8 +699,8 @@ Il custode sbuffa. &lt;span class=&quot;inserviente&quot;&gt;&quot;Io avrei del 
 &lt;span class=&quot;inserviente&quot;&gt;&quot;E va bene, andiamo.&quot;&lt;/span&gt;
 
 Vi dirigete verso l&#39;[[armadietto]]</tw-passagedata><tw-passagedata pid="34" name="dentro-amadietto" tags="" position="1212,431" size="100,100">&lt;&lt;addToSeen &quot;una cartolina&quot;&gt;&gt;
-Nell&#39;armadietto non trovi nulla se non un ombrello di emergenza, qualche quaderno nuovo di scorta e... una cartolina... di YUI.
-YUI è un tuo collega, un amico in realtà. Fa sempre dei viaggi folli in giro per il mondo. E a te che rimani sempre a casa, manda una cartolina da ogni posto. Alcuni le conservi in una scatola a casa, altre le tieni al lavoro, per poter vagare con la fantasia in quei momenti in cui ti serve proprio prendere una pausa&lt;span id=&quot;wait&quot;&gt;&lt;/span&gt;
+Nell&#39;armadietto non trovi nulla se non un ombrello di emergenza, qualche quaderno nuovo di scorta e... una cartolina... di Y.
+Y è un tuo collega, un amico in realtà. Fa sempre dei viaggi folli in giro per il mondo. E a te che rimani sempre a casa, manda una cartolina da ogni posto. Alcuni le conservi in una scatola a casa, altre le tieni al lavoro, per poter vagare con la fantasia in quei momenti in cui ti serve proprio prendere una pausa&lt;span id=&quot;wait&quot;&gt;&lt;/span&gt;
 &lt;&lt;set $seconds to 9&gt;&gt;&lt;&lt;set _cnt to 0&gt;&gt;
 
 &lt;&lt;silently&gt;&gt;
@@ -700,7 +716,7 @@ YUI è un tuo collega, un amico in realtà. Fa sempre dei viaggi folli in giro p
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/repeat&gt;&gt;
 &lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="yui" tags="" position="1312,604" size="100,100">A ben pensarci è con lui che hai lavorato ultimamente... forse lui sa dove si trova il manuale...
-Tentare non nuoce, [[vai nell&#39;ufficio di YUI]]</tw-passagedata><tw-passagedata pid="36" name="vai nell&#39;ufficio di YUI" tags="" position="1317,732" size="100,100">&quot;Hei! Che ci fai qui?&quot;
+Tentare non nuoce, [[vai nell&#39;ufficio di Yui|vai nell&#39;ufficio di YUI]]</tw-passagedata><tw-passagedata pid="36" name="vai nell&#39;ufficio di YUI" tags="" position="1317,732" size="100,100">&quot;Hei! Che ci fai qui?&quot;
 
 Hai la sua cartolina in mano e gliela &lt;&lt;linkappend &quot;mostri.&quot;&gt;&gt;
 &quot;Ho trovato questa tua cartolina nel mio armadietto&quot;
@@ -719,20 +735,20 @@ Vai all&#39; [[armadietto di yui]]
 &lt;&lt;/linkreplace&gt;&gt;
 &lt;&lt;/linkappend&gt;&gt;
 
-</tw-passagedata><tw-passagedata pid="37" name="armadietto di yui" tags="" position="1317,882" size="100,100">Apri l&#39;armadietto di YUI ma non trovi quello che stai cercando. Sei stanc&lt;&lt;a-o&gt;&gt;, è da mezza giornata che cerchi un manuale che non riesci a trovare. Senza di quello non riesci più ad andare avanti. E inizi a dubitare di farcela anche trovandolo.
+</tw-passagedata><tw-passagedata pid="37" name="armadietto di yui" tags="" position="1317,882" size="100,100">Apri l&#39;armadietto di Y ma non trovi quello che stai cercando. Sei stanc&lt;&lt;a-o&gt;&gt;, è da mezza giornata che cerchi un manuale che non riesci a trovare. Senza di quello non riesci più ad andare avanti. E inizi a dubitare di farcela anche trovandolo.
 
-Riporti la chiave a YUI. E ora cosa puoi fare?
+Riporti la chiave a Y. E ora cosa puoi fare?
 
-[[Meglio tornare nell&#39;ufficio|ufficio]] 
-[[Forse sarebbe meglio controllare ancora inbiblioteca|biblioteca]] 
+[[Meglio tornare nell&#39;ufficio|ufficio]]
+[[Forse sarebbe meglio controllare ancora in biblioteca|biblioteca]]
 [[Perchè non guardare meglio in sala 2|sala2]] </tw-passagedata><tw-passagedata pid="38" name="Prendi il manuale" tags="" position="1002,812" size="100,100">&lt;&lt;addToInv &quot;il tuo manuale&quot;&gt;&gt;
 Finalmente lo hai trovato!
 
 &quot;Bene, sarà meglio che mi metta sotto subito&quot;
 
-&lt;span class=&quot;partner&quot;&gt;&quot;Chiamami se scopri qualcosa. O se non sai più che pesc pigliare!&quot;&lt;/span&gt;
+&lt;span class=&quot;partner&quot;&gt;&quot;Chiamami se scopri qualcosa. O se non sai più che pesci pigliare!&quot;&lt;/span&gt;
 
-Torna nel tuo [[ufficio]] </tw-passagedata><tw-passagedata pid="39" name="nascondendo" tags="" position="1868,50" size="100,100">//&lt;span class=&quot;partner&quot;&gt;Direi di sì. Più guardo queste righe di testo più mi convinco che ci machino degli elementi per interpretarle nella maniera giusta. A proposito, [[novità da GHJ?]]//&lt;/span&gt;</tw-passagedata><tw-passagedata pid="40" name="novità da GHJ?" tags="" position="1993,56" size="100,100">&quot;Ancora nulla. Appena mi fa sapere qualcosa, ti informo.
+Torna nel tuo [[ufficio]] </tw-passagedata><tw-passagedata pid="39" name="nascondendo" tags="" position="1868,50" size="100,100">//@@.partner;Direi di sì. Più guardo queste righe di testo più mi convinco che ci machino degli elementi per interpretarle nella maniera giusta. A proposito, [[novità da G?|novità da GHJ]]@@//</tw-passagedata><tw-passagedata pid="40" name="novità da GHJ" tags="" position="1993,56" size="100,100">&quot;Ancora nulla. Appena mi fa sapere qualcosa, ti informo.
 Tu, hai fatto [[qualche progresso?]]&quot;</tw-passagedata><tw-passagedata pid="41" name="qualche progresso?" tags="" position="2110,52" size="100,100">//&lt;span class=&quot;partner&quot;&gt;Forse... non so, mi sono accorto di una cosa strana. Come se questo testo avesse più livelli di lettura. Come se fosse una specie di chiave piuttosto che un messaggio vero e proprio...
 
 ... non so forse sono solo stanco... ma c&#39;è un qualche pattern nella disposizione dele lettere che non mi è del tutto estraneo...&lt;/span&gt;//
@@ -754,13 +770,13 @@ Rimanete entrambi immersi nei vostri pensieri per qualche minuto. Che senso avre
         &lt;&lt;/if&gt;&gt;
     &lt;&lt;/repeat&gt;&gt;
 &lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="42" name="risposta mail" tags="" position="1841,565" size="100,100">&lt;span class=&quot;testo-mail&quot;&gt;Ciao,
-mi sono fatto aiutare, e non invano. 
-Questo testo presenta delle regolarità che lo possono associare più ad una forma di linguaggio che ad un codice criptato. Il bello è che alcune analisi preliminari mostrano una struttura matematica di rapporti tra caratteri e gruppi di caratteri tale per cui sambra quasi che il messaggio contenga anche la sua chiave di decifrazione. E&#39; ricorsivo, insomma. 
+mi sono fatto aiutare, e non invano.
+Questo testo presenta delle regolarità che lo possono associare più ad una forma di linguaggio che ad un codice criptato. Il bello è che alcune analisi preliminari mostrano una struttura matematica di rapporti tra caratteri e gruppi di caratteri tale per cui sembra quasi che il messaggio contenga anche la sua chiave di decifrazione. E&#39; ricorsivo, insomma.
 Spero abbia senso quello che ti sto dicendo.
 Ma da dove l&#39;avete tirato fuori?
 
-Saluti 
-GHJ
+Saluti
+G	
 
 PS: mi stavo scordando, ci sono due macro livelli su cui si può lavorare. Sui caratteri e sui gruppi d caratteri. Abbandona la crittografia tradizionale, qui devi lavorare su più campi. In bocca al lupo!
 &lt;/span&gt;
@@ -769,28 +785,32 @@ Leggi la mail al&lt;&lt;la-&gt;&gt; tu&lt;&lt;a-o&gt;&gt; partner.
 
 &quot;Te ne mando una copia&quot;, &lt;&lt;gli-le&gt;&gt; dici.
 
-&lt;&lt;button &quot;Inoltra Mail&quot; &quot;piano d&#39;azione&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="43" name="piano d&#39;azione" tags="" position="1755,752" size="100,100">Sei ancora al telefono con &lt;&lt;il-la&gt;&gt;tu&lt;&lt;npc-a-o&gt;&gt; partner&lt;&lt;linkappend &quot;Come si procede?&quot;&gt;&gt;
-//&lt;span class=&quot;partner&quot;&gt;Allora, come prima cosa, adesso sappiamo qualcosa in più di quello con cui abbiamo a che fare. &lt;&lt;linkappend &quot;Organizziamo le idee e vediamoci in sala riunioni&quot;&gt;&gt;&lt;/span&gt;
+&lt;&lt;button &quot;Inoltra Mail&quot; &quot;piano d&#39;azione&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="43" name="piano d&#39;azione" tags="" position="1755,752" size="100,100">Sei ancora al telefono con &lt;&lt;il-la&gt;&gt; tu&lt;&lt;npc-a-o&gt;&gt; partner.
+&lt;&lt;linkappend &quot;Come si procede?&quot;&gt;&gt;
+&lt;span class=&quot;partner&quot;&gt;&quot;Allora, come prima cosa, adesso sappiamo qualcosa in più di quello con cui abbiamo a che fare.
+
+Organizziamo le idee e vediamoci in &lt;/span&gt;&lt;&lt;linkreplace &quot;sala riunioni ...&quot;&gt;&gt;&lt;span class=&quot;partner&quot;&gt;sala riunioni ...
+Che ne pensi?&quot;&lt;/span&gt;
 &quot;Sì, raccogliamo il materiale che abbiamo e vediamoci lì&quot;
+
 [[Riagganci|ufficio]]
-&lt;&lt;/linkappend&gt;&gt;&lt;/span&gt;//
-&lt;&lt;/linkappend&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="laboratorio" tags="" position="82,764" size="100,100">In laboratorio ad aspettarti c&#39;è XYZ.
+&lt;&lt;/linkreplace&gt;&gt;&lt;&lt;/linkappend&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="laboratorio" tags="" position="82,764" size="100,100">In laboratorio ad aspettarti c&#39;è K.
 &lt;span class=&quot;xyz&quot;&gt;&quot;Gradirei essere informato sui vostri sviluppi&quot;&lt;/span&gt;
 &quot;Non c&#39;è ancora nulla da sapere, ma stiamo iniziando una nuova ricerca. Speriamo dia più risultati di quella tradizionale.&quot;
-&lt;span class=&quot;xyz&quot;&gt;&quot;Spero tu capisca che anche io sono legato a mantenere il silenzio su alcune faccende. Voglio dire... mi rebdo conto che non vi ho dato un compito semplice, ma... &quot;&lt;/span&gt;
-&quot;Comprendo, comprendo. Ma ora, devo iniziare a fare i test&quot;
+&lt;span class=&quot;xyz&quot;&gt;&quot;Spero tu capisca che anche io sono legato a mantenere il silenzio su alcune faccende. Voglio dire... mi rendo conto che non vi ho dato un compito semplice, ma... &quot;&lt;/span&gt;
+&quot;Comprendo, comprendo. Ma ora, devo iniziare a fare i test...&quot;
 
 &lt;span class=&quot;xyz&quot;&gt;&quot;Certo, me ne vado. Bel lavoro, comunque. Tutti e tre.&quot;&lt;/span&gt;
 
 &quot;Tre?&quot; chiedi insospettit&lt;&lt;a-o&gt;&gt;
-&lt;span class=&quot;xyz&quot;&gt;&quot;Sì, so che avete coinvolto anche GHJ&quot;&lt;/span&gt; ti dice sorridendo mentre si volta ed esce dal laboratorio.
+&lt;span class=&quot;xyz&quot;&gt;&quot;Sì, so che avete coinvolto anche G&quot;&lt;/span&gt; ti dice sorridendo mentre si volta ed esce dal laboratorio.
 
 Bene. Tempo di mettersi al [[lavoro]]
 </tw-passagedata><tw-passagedata pid="45" name="lavoro" tags="" position="82,914" size="100,100">Per tre giorni initerrotti le macchine macinano numeri.
 Ti tieni in contatto con &lt;&lt;il-la&gt;&gt; tu&lt;&lt;npc-a-o&gt;&gt; partner, ma ora quello che ti resta da fare è aspettare
 
-					&lt;span id=&quot;waiting&quot;&gt;&lt;/span&gt;
-					
+&lt;&lt;timed 4s&gt;&gt;					&lt;span id=&quot;waiting&quot;&gt;&lt;/span&gt;
+
 &lt;&lt;set $seconds to 25&gt;&gt;&lt;&lt;set _cnt to 0&gt;&gt;
 &lt;&lt;silently&gt;&gt;
 &lt;&lt;repeat 1s&gt;&gt;
@@ -802,7 +822,8 @@ Ti tieni in contatto con &lt;&lt;il-la&gt;&gt; tu&lt;&lt;npc-a-o&gt;&gt; partner
 	&lt;&lt;if $seconds is 0&gt;&gt;&lt;&lt;replace &quot;#waiting&quot;&gt;&gt;&lt;&lt;link &quot;I risultati sono pronti&quot; &quot;risultati&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;stop&gt;&gt;
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/repeat&gt;&gt;
-&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="46" name="risultati" tags="" position="1882,724" size="100,100">Dopo vari passaggi i risultati tuoi e del&lt;&lt;la-&gt;&gt; tu&lt;&lt;npc a-o&gt;&gt; partner sono pronti.
+&lt;&lt;/silently&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="46" name="risultati" tags="" position="1882,724" size="100,100">Dopo vari passaggi i risultati tuoi e del&lt;&lt;la-&gt;&gt; tu&lt;&lt;npc-a-o&gt;&gt; partner sono pronti.
 
 
 Ci sono volute molte ore di lavoro per estrarre dal messaggio inviato il contenuto da una parte e la chiave di lettura dall&#39;altra.
@@ -810,15 +831,17 @@ Si tratta di un paio di sequenza numeriche da inserire come input nel programma 
 
 [[Insieme inserite i rispettivi codici|the end]]</tw-passagedata><tw-passagedata pid="47" name="prendiCacciavite" tags="" position="739,809" size="100,100">&lt;&lt;addToInv &quot;un cacciavite&quot;&gt;&gt;
 Prendi il cacciavite e lo metti in tasca. Non si sa mai.
-[[torna in ufficio|ufficio]]
-&lt;&lt;if visited(&quot;sala2&quot;)&gt;&gt;[[Ritorna in sala 2|sala2]]&lt;&lt;else&gt;&gt;[[Vai in sala 2|sala2]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if visited(&quot;armadietto&quot;)&gt;&gt;[[Cerca ancora nell&#39;armadietto|armadietto]]&lt;&lt;elseif visited(&quot;sala2&quot;) is 3&gt;&gt;
+[[Torna in ufficio|ufficio]]
+&lt;&lt;if visited(&quot;sala2&quot;) lt 2&gt;&gt;[[Vai in sala 2|sala2]]
+&lt;&lt;else&gt;&gt;[[Ritorna in sala 2|sala2]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if visited(&quot;armadietto&quot;) is 0 and visited(&quot;sala2&quot;) gte 2&gt;&gt;
 [[Cerca nell&#39;armadietto|armadietto]]&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="48" name="lasciCacciavite" tags="" position="870,807" size="100,100">Lasci qui il cacciavite, inutile porarselo dietro ora.
 &lt;&lt;addToSeen &quot;un cacciavite&quot;&gt;&gt;
-[[torna in ufficio|ufficio]]
-&lt;&lt;if visited(&quot;sala2&quot;)&gt;&gt;[[Ritorna in sala 2|sala2]]&lt;&lt;else&gt;&gt;[[Vai in sala 2|sala2]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if visited(&quot;armadietto&quot;)&gt;&gt;[[Cerca ancora nell&#39;armadietto|armadietto]]&lt;&lt;elseif visited(&quot;sala2&quot;) is 3&gt;&gt;
-[[Cerca nell&#39;armadietto|armadietto]]&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="49" name="Copertina" tags="copertina" position="226,169" size="100,100">&lt;div class=&quot;container&quot;&gt;
+[[Torna in ufficio|ufficio]]
+&lt;&lt;if visited(&quot;sala2&quot;) gt 0 and visited(&quot;sala2&quot;) lte 2&gt;&gt;[[Ritorna in sala 2|sala2]]&lt;&lt;else&gt;&gt;[[Vai in sala 2|sala2]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if visited(&quot;sala2&quot;) gte 3 and visited(&quot;armadietto&quot;) is 0&gt;&gt;
+[[Cerca nell&#39;armadietto|armadietto]]&lt;&lt;/if&gt;&gt;
+/%&lt;&lt;if visited(&quot;armadietto&quot;) is 0&gt;&gt;[[Cerca nell&#39;armadietto|armadietto]]&lt;&lt;/if&gt;&gt;%/</tw-passagedata><tw-passagedata pid="49" name="Copertina" tags="copertina" position="226,169" size="100,100">&lt;div class=&quot;container&quot;&gt;
   &lt;h1 class=&quot;neon&quot;&gt;Doppio codice&lt;/h1&gt;
   &lt;h2 class=&quot;neon&quot;&gt;[[Gioca|Menu start]]&lt;/h2&gt;
 &lt;/div&gt;

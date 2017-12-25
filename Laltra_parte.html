@@ -283,7 +283,11 @@ h6.neon{
 
 
 
+
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">Config.history.controls=false;
+
+
 
 
 
@@ -320,10 +324,9 @@ Il tassista ti lascia all&#39;angolo della strada. Una pioggerella leggera inizi
 &#39;Fanno 12.5 crediti&#39;
 
 Frughi nelle tasche del tuo impermeabile. Raccogli qualche moneta.
-Hai 14 crediti in tutto
+&lt;&lt;linkappend &quot;Hai 14 crediti in tutto&quot;&gt;&gt;
 &lt;&lt;set _cnt to 0&gt;&gt;
 &lt;span id=&quot;pay&quot;&gt;&lt;/span&gt;
-
 &lt;&lt;repeat 2s&gt;&gt;\
 &lt;&lt;set _cnt to _cnt+1&gt;&gt;\
 	&lt;&lt;if _cnt eq _howmuch.length&gt;&gt;&lt;&lt;set _cnt to 0&gt;&gt;\
@@ -332,7 +335,7 @@ Hai 14 crediti in tutto
 &lt;&lt;replace &quot;#pay&quot;&gt;&gt;_phrase[_cnt] &lt;&lt;link _howmuch[_cnt]&gt;&gt;\
 	&lt;&lt;goto pay&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;/replace&gt;&gt;\
 &lt;&lt;/repeat&gt;&gt;\
-</tw-passagedata><tw-passagedata pid="3" name="primo-piano" tags="" position="450,59" size="100,100">Due file di porte si affacciano su un lungo e stretto corridoio. L&#39;illuminazione al neon rende l&#39;atmosfera tremolante. Nessuna finestra irradia luce in quest&#39;ambiente, tranne una, piccola e stretta in fondo. Ma nessuno la pulisce più da anni, e la luce ha smesso di filtrare dai suoi vetri sporchi.
+&lt;&lt;/linkappend&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="primo-piano" tags="" position="450,59" size="100,100">Due file di porte si affacciano su un lungo e stretto corridoio. L&#39;illuminazione al neon rende l&#39;atmosfera tremolante. Nessuna finestra irradia luce in quest&#39;ambiente, tranne una, piccola e stretta in fondo. Ma nessuno la pulisce più da anni, e la luce ha smesso di filtrare dai suoi vetri sporchi.
 
 I tuoi passi avanzano sul tappeto un tonfo sordo alla volta.
 Sai che la guardia all&#39;altro capo del corridoio ti sta osservando, anche se fa finta di leggere il giornale.
