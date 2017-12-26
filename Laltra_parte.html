@@ -133,13 +133,12 @@ a:hover {
   cursor:pointer;
 }
 
+#story{
+  margin-left: 15%;
+}
+
 #ui-bar {
-  color: Chartreuse ;
-  background-color: crimson;
-  background-image: url("media/images/glitch.jpeg");  
-  font-family: Futura, sans-serif;
-  font-size: 80%;
-  border:none;
+  display:none;
 }
 #ui-bar-toggle{
   background:crimson;
@@ -181,7 +180,7 @@ a:hover {
   font-size: 500%;
   line-height: 1vw;
   text-shadow: 0 0 3vw #F40A35;
-  margin-left:30%;
+  margin-left:15%;
   text-align: left;
 }
 
@@ -197,7 +196,7 @@ h6.neon{
   font-size: 500%;
   line-height: 1vw;
   text-shadow: 0 0 3vw #2356FF;
-  margin-left:30%;
+  margin-left:15%;
   text-align: left;
 
 }
@@ -286,7 +285,9 @@ h6.neon{
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">Config.history.controls=false;
+
 
 
 
@@ -342,13 +343,12 @@ Avanzi senza fretta (la fretta in questo posto è sospetta) verso [[la porta num
 &lt;&lt;cacheaudio &quot;pub&quot; &quot;media/audio/pub.ogg&quot; &quot;media/audio/pub.mp3&quot;&gt;&gt;
 &lt;&lt;waitforaudio&gt;&gt;
 
-&lt;&lt;script&gt;&gt;
-UIBar.stow();
-&lt;&lt;/script&gt;&gt;
-
 &lt;&lt;set $payment to &quot;tutto&quot;&gt;&gt;
 &lt;&lt;set $codice to &quot;2512201771022152&quot;&gt;&gt;
-&lt;&lt;set $codice_inserito to &quot;&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Inizio" tags="" position="32,50" size="100,100">&lt;p class=&quot;neon&quot;&gt;L&#39;altra&lt;/p&gt; &lt;p class=&quot;flux&quot;&gt;parte&lt;/p&gt;
+&lt;&lt;set $codice_inserito to &quot;&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Inizio" tags="" position="32,50" size="100,100">
+
+
+&lt;p class=&quot;neon&quot;&gt;L&#39;altra&lt;/p&gt; &lt;p class=&quot;flux&quot;&gt;parte&lt;/p&gt;
 
 &lt;h6 class=&quot;neon&quot;&gt;[[Gioca|Beginning]]&lt;/h6&gt;</tw-passagedata><tw-passagedata pid="6" name="la porta numero 12" tags="" position="597,57" size="100,100">&lt;&lt;linkappend &quot;Bussi.&quot;&gt;&gt;
 //&#39;Avanti&#39;// senti dire da dietro il muro.
@@ -373,12 +373,12 @@ Fai un sospiro e lo guardi negli occhi.
 
 //[[&#39;Dimmi tutto&#39;|piano]]//
 &lt;&lt;/linkappend&gt;&gt;&lt;&lt;/linkappend&gt;&gt;
-&lt;&lt;/linkappend&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="piano" tags="" position="744,66" size="100,100">//&#39;Diciamo che tu non sai che dentro a quella scatola ci sono le lenti. Fingiamo pure di credere che tu non sappia che non tutti i pacchi che sono passati dalle tue mani alle mie hanno avuto percorsi, per così dire, regolari.
+&lt;&lt;/linkappend&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="piano" tags="" position="744,66" size="100,100">//&#39;Diciamo che tu non sai che dentro a quella scatola ci sono le lenti. Fingiamo pure di credere che tu non sappia che alcuni dei pacchi che sono passati dalle tue mani alle mie hanno avuto percorsi, per così dire, regolari.
 Ora è tempo di passare dall&#39;altra parte.&#39;//
 
 &lt;&lt;linkappend &quot;&lt;em&gt;&#39;Non capisco&#39;&lt;/em&gt;&quot;&gt;&gt;
 
-//&#39;Qualcuno sta iniziando a contrabbandare non solo lenti, ma altro materiale. Piuù pericoloso. Noi ci dobbiamo occupare di scovare chi c&#39;è dietro a questa storia e fermarlo.&#39;//
+//&#39;Qualcuno sta iniziando a contrabbandare non solo lenti, ma altro materiale. Più pericoloso. Noi ci dobbiamo occupare di scovare chi c&#39;è dietro a questa storia e fermarlo.&#39;//
 
 &lt;&lt;linkappend &quot;&lt;em&gt;&#39;A che pro?&#39;&lt;/em&gt;&quot;&gt;&gt;
 
@@ -388,7 +388,7 @@ Non ci credi. Non ci puoi credere. Deve esserci una fregatura da qualche parte.
 
 //&#39;Allora, sei con me?&#39;//
 
-Sei stanco, hai bisogno di un bagno, di una dormita. La ciccatrice sulla spalla inizia a pulsare. Succede sempre quando sta per succedere qualcosa. 
+Sei stanco, hai bisogno di un bagno, di una dormita. La cicatrice sulla spalla inizia a pulsare. Succede sempre quando sta per succedere qualcosa. 
 Cosa fai?
 
 [[Accetti|accetti]] | [[&quot;Ci devo riflettere&quot;|riflettere]] | [[&quot;Dimmi di più, non mi fido&quot;|spiega]]
@@ -407,7 +407,7 @@ Ti giri ed [[esci|fuori]].</tw-passagedata><tw-passagedata pid="9" name="riflett
 
 //&quot;Come vuoi, ma se mi fai aspettare troppo, l&#39;offerta potrebbe non essere più valida...&quot;//
 
-&lt;&lt;linkappend &quot;Ti giri per uscire.&quot;&gt;&gt;//&quot;Se accetti io non sarò più il tuo responsabile. Saremo pari grado&quot;// aggiunge.
+&lt;&lt;linkappend &quot;Ti giri per uscire.&quot;&gt;&gt; //&quot;Se accetti io non sarò più il tuo responsabile. Saremo pari grado&quot;// aggiunge.
 Interessante.
 [[Esci|fuori]]&lt;&lt;/linkappend&gt;&gt;
 
@@ -417,23 +417,26 @@ Il suo sguardo indugia sulle sue mani appoggiate alla scrivania.
 &#39;&#39;&quot;Non sono nato ieri. Non mi avresti mai proposto questo lavoro se qualcuno non lo avesse imposto a te.
 Se vuoi che lavoriamo assieme devi dirmi tutto. Sai che ti puoi fidare.&quot;&#39;&#39;
 
-&lt;&lt;timed 4s&gt;&gt;//&quot;L&#39;altro giorno è uscito uno studio medico. Pare che le lenti stiano iniziando a dare effetti collaterali a chi le usa&quot;//
+&lt;&lt;timed 12s&gt;&gt;//&quot;L&#39;altro giorno è uscito uno studio medico.&lt;&lt;next 2s&gt;&gt; Pare che le lenti stiano iniziando a dare effetti collaterali a chi le usa&quot;//
 
-&lt;&lt;next&gt;&gt;&#39;&#39;&quot;Tipo?&quot;&#39;&#39;
+&lt;&lt;next 4s&gt;&gt;&#39;&#39;&quot;Tipo?&quot;&#39;&#39;
 
-//&quot;A parte la dipendenza - cosa su cui noi segretamente contavamo - pare ci siano effetti sulla psiche, sul comportamento...
+&lt;&lt;next 1s&gt;&gt;//&quot;A parte la dipendenza - cosa su cui noi segretamente contavamo - pare ci siano effetti sulla psiche, sul comportamento...
 Insomma, le persone iniziano a cambiare, a trasformarsi. A compiere azioni folli, al di là della loro natura. Spesso il tutto si risolve con un suicidio, ma prima di arrivarci di sangue ne scorre un bel po&#39;.&quot;//
 
+Fissi il suo sguardo. Rifletti.
 &lt;&lt;next 15s&gt;&gt;&#39;&#39;&quot;Mi stai dicendo che quelle lenti stanno facendo impazzire le persone?&quot;&#39;&#39;
 
-//&quot;Peggio, quello che ti dico è che le lenti iniziano a &#39;&#39;CONTROLLARE&#39;&#39; le persone&quot;//
+&lt;&lt;next 3s&gt;&gt;//&quot;Peggio, quello che ti dico è che le lenti iniziano a &#39;&#39;CONTROLLARE&#39;&#39; le persone&quot;//
 
-&#39;&#39;&quot;Non è possibile. Come possono?&quot;&#39;&#39;
+&lt;&lt;next 4s&gt;&gt;&#39;&#39;&quot;Non è possibile. Come possono?&quot;&#39;&#39;
 
-//&quot;E&#39; quello che dobbiamo scoprire noi. Le lenti di per sè sono innocue. Ma prima di essre vendute devono venire sottoposte a qualche intervento che ne modifica la struttura. E dove meglio che in questo posto può succedere tutto questo? Quando la merce entra qui, i controlli sono già stati effettuati. 
+&lt;&lt;next 2s&gt;&gt;//&quot;E&#39; quello che dobbiamo scoprire noi. Le lenti di per sè sono innocue. Ma prima di essere vendute devono venire sottoposte a qualche intervento che ne modifica la struttura. E dove meglio che in questo posto può succedere tutto questo? Quando la merce entra qui, i controlli sono già stati effettuati. 
 Io ti sto dicendo questo anche se non potrei perchè mi fido di te. E ho bisogno del tuo aiuto. Lavoriamo assieme. Da pari.&quot;//
 
-&lt;&lt;next 20s&gt;&gt;&lt;&lt;if visited(&quot;accetti&quot;) is 0 and visited(&quot;riflettere&quot;) is 0&gt;&gt;&#39;&#39;&quot;Ci sto. A domani&quot;&#39;&#39;
+Ti fissa. Una nuvola di pensieri nella tua testa.
+
+&lt;&lt;next 15s&gt;&gt;&lt;&lt;if visited(&quot;accetti&quot;) is 0 and visited(&quot;riflettere&quot;) is 0&gt;&gt;&#39;&#39;&quot;Ci sto. A domani&quot;&#39;&#39;
 
 [[Esci|fuori]] dalla stanza in fretta.
 &lt;&lt;else&gt;&gt;Ora che hai tutto quello che ti serve, sei pronto per andare nel [[tuo ufficio]]
@@ -443,36 +446,36 @@ Io ti sto dicendo questo anche se non potrei perchè mi fido di te. E ho bisogno
 Ripercorri il corridoio in senso opposto. Ora la guardia non ti presta più attenzione. Scendi le scale e appena fuori dal palazzo fai un profondo respiro.
 
 &lt;&lt;if visited(&quot;accetti&quot;) is 1&gt;&gt;
-Hai accettato di imbarcarti in un lavoro che ti vuole rinchiuso in questo casermone pe chissà quanto tempo. Ti ci vuole una bevuta per digerire l&#39;idea. [[Vai al pub all&#39;angolo|pub]] 
+Hai accettato di imbarcarti in un lavoro che ti vuole rinchiuso in questo casermone per chissà quanto tempo. Ti ci vuole una bevuta per digerire l&#39;idea. [[Vai al pub all&#39;angolo|pub]] 
 &lt;&lt;elseif visited(&quot;riflettere&quot;)is 1&gt;&gt;
-Socchiudi gli occhi. Respiri l&#39;aria fredda. Non hai voglia di pensare troppo adesso. L&#39;unica cosa che vuoi è arrivare a casa, il più in fretta possibile. Prendi un altro taxi e vai a [[casa]]
+Socchiudi gli occhi. Respiri l&#39;aria fredda. Non hai voglia di pensare troppo adesso. L&#39;unica cosa che vuoi è arrivare a casa, il più in fretta possibile. Ritiri qualche credito, prendi un altro taxi e vai dritto a [[casa]]
 &lt;&lt;elseif visited(&quot;spiega&quot;) is 1&gt;&gt;
 Troppe informazioni. Troppo poco tempo per assimilarle tutte. Devi riflettere. Meglio camminare fino a casa. Sei stanco, ma sei più preoccupato di non fare passi falsi. Molto dipende da come ti muoverai ora. [[Cammini fino a casa|cammino]]
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="pub" tags="" position="589,519" size="100,100">&lt;&lt;if $payment eq &quot;12.5 crediti&quot;&gt;&gt;Per prima cosa, devi ritirare qualche soldo. Addosso ti sono rimasti solo 1.5 crediti. Non vai molto lontano solo con quelli. 
 &lt;&lt;elseif $payment eq &quot;13 crediti&quot;&gt;&gt;Affondi le mani nelle tasche e inizi a giocherellare con l&#39;unico credito che ti è rimasto. Meglio prelevare qualcosa.
-&lt;&lt;elseif $payment eq &quot;tutto&quot;&gt;&gt;Hai appena accettato un lavoro del diavolo e non hai nemmeno più un soldo per pagarti una birra. Finirà mai questa giornata? Devi prelevare.
+&lt;&lt;elseif $payment eq &quot;tutto&quot;&gt;&gt;Hai appena accettato un lavoro del diavolo e non hai nemmeno più un soldo per pagarti una birra. 
+&#39;&#39;... finirà mai questa giornata?&#39;&#39;
+Devi ritirare dei crediti.
 &lt;&lt;/if&gt;&gt;
 Lungo la strada familiare da F.H. House a casa c&#39;è il //vecchio Marley//, uno degli ultimi vecchi pub gestito da &#39;&#39;Marley&#39;&#39; in persona. E&#39; un tipo strano Marley, nel suo pub ha addirittura tenuto un vecchio schermo LCD; e ci si diverte pure, il vecchio Marley, a guardare i programmi su quel rudere. D&#39;altronde al giorno d&#39;oggi la vecchia tecnologia suscita un fascino particolare e va di moda circondarsi di vecchi aggeggi. Una volta, hai persino visto un tostapane, in un bar. 
 
-Ah, ecco la cabina per il [[prelevamento crediti]]</tw-passagedata><tw-passagedata pid="13" name="casa" tags="" position="727,519" size="100,100">&lt;&lt;audio &quot;rain&quot; stop&gt;&gt;
+Ah, ecco la cabina per il [[ritiro crediti|prelevamento crediti]]</tw-passagedata><tw-passagedata pid="13" name="casa" tags="" position="727,519" size="100,100">&lt;&lt;audio &quot;rain&quot; stop&gt;&gt;
 &lt;&lt;if visited(&quot;tossico&quot;)is 1 or visited(&quot;Marley&quot;) is 1&gt;&gt;
 Appena rientri ti liberi dei vestiti, ti fai una doccia e ti butti a letto. Ti senti fortunato per non essere mai caduto nella trappola delle lenti. Le hai provate una volta e hai giurato che mai più ci avresti ritentato. Questo è l&#39;ultimo pensiero prima di addormentarti. Devi riposare, [[domani|day2]] sarà impegnativo.
 &lt;&lt;elseif visited(&quot;Guardi la televisione&quot;) is 0&gt;&gt;
 Appena rientri ti liberi dei vestiti, ti fai una doccia. Mentre ti prepari qualcosa da mangiare accendi l&#39; olovisore. Stanno trasmettendo un documentario sul canale culturale. [[Ti metti a guardarlo.|Guardi la televisione]]
-&lt;&lt;else&gt;&gt;Ti senti fortunato per non essere mai caduto nella trappola delle lenti. Le hai provate una volta e hai giurato che mai più ci avresti rifiutato. Questo è l&#39;ultimo pensiero prima di addormentarti. Devi riposare, [[domani|day2]] sarà impegnativo.&lt;&lt;/if&gt;&gt;
+&lt;&lt;else&gt;&gt;Ti senti fortunato per non essere mai caduto nella trappola delle lenti. Le hai provate una volta e hai giurato che mai più ci avresti ritentato. Questo è l&#39;ultimo pensiero prima di addormentarti. Devi riposare, [[domani|day2]] sarà impegnativo.&lt;&lt;/if&gt;&gt;
  </tw-passagedata><tw-passagedata pid="14" name="cammino" tags="" position="871,519" size="100,100">Ti incammini per strada. 
-Una serie di pensieri si accavallano uno all&#39;altro mentre avanzi con il bavero dell&#39;impermeabile alzato e le mani ficcate nelle tasche&lt;&lt;if $payment eq &quot;tutto&quot;&gt;&gt;vuote.&lt;&lt;else&gt;&gt; dove le poche monete rimaste tintinnano ad ogni passo.&lt;&lt;/if&gt;&gt;
+Una serie di pensieri si accavallano uno all&#39;altro mentre avanzi con il bavero dell&#39;impermeabile alzato e le mani ficcate nelle tasche&lt;&lt;if $payment eq &quot;tutto&quot;&gt;&gt; vuote.&lt;&lt;else&gt;&gt;, le poche monete rimaste tintinnano ad ogni passo.&lt;&lt;/if&gt;&gt;
 
 Sei così sovrapensiero che non ti accorgi che stai per calpestare una [[massa scura|tossico]] sul marciapiede davanti a te.</tw-passagedata><tw-passagedata pid="15" name="day2" tags="" position="1230,193" size="100,100">Eccoti di nuovo alla F.H. House. Sei nella stanza 12 insieme a Sam, il tuo repsponsabile, o, per meglio dire, il tuo nuovo socio.
-
-&lt;&lt;if visited(&quot;riflettere&quot;) is 1&gt;&gt;Accetti il lavoro, più per curiosità che altro.&lt;&lt;/if&gt;&gt;
-
-Non appena entri  Sam ti sommerge di scartoffie, ti riempie la testa di procedure che dimentichi appena te le riferisce e ti spiega le dinamiche interne agli uffici del palazzo.
+&lt;&lt;if visited(&quot;riflettere&quot;) is 1&gt;&gt;Gli dici che accetti il lavoro, più per curiosità che altro.&lt;&lt;/if&gt;&gt;
+Sam inizia a sommergerti di scartoffie, ti riempie la testa di procedure che dimentichi appena te le riferisce e ti spiega le dinamiche interne agli uffici del palazzo.
 Ti scrive una serie di password e procedure di accesso su foglietti che prontamente infili nelle tue tasche.
 
 &lt;&lt;if visited(&quot;accetti&quot;) is 1 or visited(&quot;riflettere&quot;) is 1&gt;&gt;
-Tutto quello che vuoi sapere, in realtà, è cosa sta succedendo. Cosa c&#39;è sotto.
-[[Gli chiedi delucidazioni riguardo al lavoro|spiega]]&lt;&lt;/if&gt;&gt;
+Ma quello che vuoi sapere, in realtà, è cosa sta succedendo, cosa c&#39;è sotto.
+[[Gli chiedi delucidazioni riguardo al lavoro|spiega]]
 &lt;&lt;else&gt;&gt;Non ti resta che andare a vedere il tuo nuovo [[ufficio|tuo ufficio]] &lt;&lt;/if&gt;&gt;
 
 
@@ -512,13 +515,13 @@ Sarebbe fantastico, se solo il sostegno non fosse sfasciato.
 &#39;scan della retina in corso. Non muoversi&#39;.
 
 &lt;&lt;timed 2s&gt;&gt;\
-&lt;p class=&quot;shudder&quot;&gt;E&#39; una parola. Sta pure piovigginando dentro alla caabina ...&lt;/p&gt;
+&lt;p class=&quot;shudder&quot;&gt;E&#39; una parola. Sta pure piovigginando dentro la cabina ...&lt;/p&gt;
 
 &lt;&lt;next&gt;&gt;\
 &#39;prego selezionare importo del prelievo&#39;
 
 &lt;&lt;next&gt;&gt;\
-Finalmente! Bene, adesso puoi andare da [[Marley]]\
+&#39;&#39;Fatto, finalmente!&#39;&#39; Bene, adesso puoi andare da [[Marley]]\
 
 &lt;&lt;/timed&gt;&gt;\
 &lt;&lt;/linkappend&gt;&gt;\
@@ -534,15 +537,14 @@ Finalmente! Bene, adesso puoi andare da [[Marley]]\
 Appena in tempo... sta iniziando a piovere per bene adesso.
 &lt;&lt;audio &quot;rain&quot; stop&gt;&gt;
 //&#39;Hei, guarda un po&#39; chi si rivede&#39;// ti saluta Marley. Il volto è serio, ma gli occhi ti sorridono dietro a spessi occhiali di tartaruga. 
-Marley non si è mai fidato delle lenti... 
+&lt;&lt;timed 8s&gt;&gt;Marley non si è mai fidato delle lenti... 
 
-&lt;&lt;timed 6s&gt;&gt;&#39;&#39; &#39;Ciao Marley&#39;&#39;&#39; ricambi il saluto. 
-&lt;&lt;next 4s&gt;&gt;Ti siedi al bancone vicino a lui.
-&lt;&lt;next 6s&gt;&gt;&#39;&#39; &#39;Sono appena tornato da uno dei miei viaggi&#39; &#39;&#39; gli confidi.
-&lt;&lt;next 6s&gt;&gt;//&#39;Allora so cosa ti serve&#39;// e mi passa un bicchiere pieno.
-&lt;&lt;next 6s&gt;&gt;//&#39;Non hai una bella cera&#39;// dice dopo averti osservato dal bancone.
-&lt;&lt;next 6s&gt;&gt;&#39;&#39; &#39;Grazie, Marley. Avevo proprio bisogno d qualcuno che mi tirasse su&#39; &#39;&#39; ironizzi sorridendogli
-&lt;&lt;next 6s&gt;&gt;&#39;&#39; &#39;Devo solo andare a casa e riposarmi.&#39; &#39;&#39; aggiungi rassicurandolo.
+&lt;&lt;next 4s&gt;&gt;&#39;&#39; &#39;Ciao Marley&#39;&#39;&#39; ricambi il saluto. &lt;&lt;next 2s&gt;&gt;Ti siedi al bancone vicino a lui.
+&lt;&lt;next 3s&gt;&gt;&#39;&#39; &#39;Sono appena tornato da uno dei miei viaggi&#39; &#39;&#39; gli confidi.
+&lt;&lt;next 4s&gt;&gt;//&#39;Allora so cosa ti serve&#39;//. &lt;&lt;next 1.5s&gt;&gt;Ti passa un bicchiere pieno.
+&lt;&lt;next 4.5s&gt;&gt;//&#39;Non hai una bella cera&#39;// dice dopo averti osservato dal bancone.
+&lt;&lt;next 4.5s&gt;&gt;&#39;&#39; &#39;Grazie, Marley. Avevo proprio bisogno d qualcuno che mi tirasse su&#39; &#39;&#39; ironizzi sorridendogli
+&lt;&lt;next 3.5s&gt;&gt;&#39;&#39; &#39;Devo solo andare a casa e riposarmi.&#39; &#39;&#39; aggiungi rassicurandolo.
 &lt;span id=&quot;waiting&quot;&gt;&lt;/span&gt;
 &lt;span id=&quot;next&quot;&gt;&lt;/span&gt; 
 &lt;&lt;next 1s&gt;&gt;
@@ -571,13 +573,13 @@ Marley non si è mai fidato delle lenti...
 Lo scansi all&#39;ultimo momento...
 
 //&#39;Hai qualche spicciolo, amico?&#39;//
-&lt;&lt;if $payment eq &quot;tutto&quot;&gt;&gt;&#39; &#39;&#39;No, mi spiace&#39;&#39; &#39;&lt;&lt;elseif $payment eq &quot;12.5 crediti&quot;&gt;&gt;Gli dai il credito e mezzo che ti è rimasto dalla corsa in taxi&lt;&lt;else&gt;&gt;Gli dai il credito che ti è rimasto dalla corsa in taxi&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $payment eq &quot;tutto&quot;&gt;&gt;&#39; &#39;&#39;No, mi spiace&#39;&#39; &#39;. &#39;&#39;Nessuno dovrebbe essere ridotto a vivere così&#39;&#39; pensi. Trovi un ritiro crediti e gliene lasci qualcuno.&lt;&lt;elseif $payment eq &quot;12.5 crediti&quot;&gt;&gt;Gli dai il credito e mezzo che ti è rimasto dalla corsa in taxi&lt;&lt;else&gt;&gt;Gli dai il credito che ti è rimasto dalla corsa in taxi&lt;&lt;/if&gt;&gt;
 
 &#39; &#39;&#39;Per cosa li userai?&#39;&#39; &#39; lo guardi negli occhi mentre lo chiedi.
 Lo sguardo perso e gli occhi arrossati ti danno la risposta: lenti. Hai incontrato un tossico, una persona che ha sviluppato dipendenza da una realtà che non esiste. Che senso abbia poi chimarla realtà proprio non lo sai.
 
 Avanzi lungo la strada.
-Dopo qualche isolato una vetrina luminosa attrae la tua attenzione. E&#39; un rivenditore di oloviori. Sono tutti sintonizzati su un programma educativo: [[un documentario sulle lenti.|Guardi la televisione]] </tw-passagedata><tw-passagedata pid="21" name="Guardi la televisione" tags="" position="565,735" size="100,100">In olovisione &lt;&lt;if visited(&quot;Marley&quot;) gt 0&gt;&gt;, e a quanto pare anche in televisione,&lt;&lt;/if&gt; danno un documentario sulla storia delle lenti.
+Dopo qualche isolato una vetrina luminosa attrae la tua attenzione. E&#39; un rivenditore di olovisori. Sono tutti sintonizzati sullo stesso [[canale.|Guardi la televisione]] </tw-passagedata><tw-passagedata pid="21" name="Guardi la televisione" tags="" position="565,735" size="100,100">In olovisione &lt;&lt;if visited(&quot;Marley&quot;) gte 1&gt;&gt;(e a quanto pare anche in televisione)&lt;&lt;/if&gt;&gt; danno un documentario sulla storia delle lenti.
 Sicuranmente c&#39;è dietro il gruppo comunicazione alla F.H. House.
 Devono riabilitare l&#39;immagine del prodotto di punta, le lenti. E sono pronti ad usare qualsiasi mezzo.
 
@@ -595,15 +597,14 @@ All&#39;inizio si consigliava di non tenere le lenti addosso per più di 4 ore. 
 
 Dicono che le lenti possono essere indossate e che se disattivate non hanno nessun tipo d utilizzo.
 
-Guardi le immagini coloratissime delle prime pubblicità delle lenti su quello sgangherato schermo LCD. &lt;&lt;if visited(&quot;Marley&quot;)&gt;&gt;E&#39; strano quando sei abituato a vedere le immagini in 3 dimensioni.&lt;&lt;/if&gt;&gt;
-
+Guardi le immagini coloratissime delle prime pubblicità delle lenti su quello sgangherato schermo LCD. 
+&lt;&lt;if visited(&quot;Marley&quot;) gte 1&gt;&gt;... fa uno strano effetto non vederle in 3D...&lt;&lt;/if&gt;&gt;
 Al centro dello schermo spicca il logo della lobby: F.H.
 Facebook Holding.
 
-&lt;&lt;if visited(&quot;Marley&quot; is 1)&gt;&gt;E&#39; tempo di andare. Saluti Marley ed esci. Ti incammini verso [[casa]]
-&lt;&lt;elseif visited(&quot;tossico&quot;)is 1&gt;&gt;Basta. Ora vuoi solo andare a [[casa]]
-&lt;&lt;else&gt;&gt;Non ne puoi più. [[Spegni il televisore.|casa]]
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;if visited(&quot;Marley&quot;) is 1&gt;&gt;E&#39; tempo di andare. Saluti Marley ed esci. Ti incammini verso [[casa]]
+&lt;&lt;elseif visited(&quot;tossico&quot;) is 1&gt;&gt;Basta. Ora vuoi solo andare a [[casa]]
+&lt;&lt;else&gt;&gt;Non ne puoi più. [[Spegni il televisore.|casa]]&lt;&lt;/if&gt;&gt;
 
 </tw-passagedata><tw-passagedata pid="22" name="tuo ufficio" tags="" position="1200,398" size="100,100">&lt;&lt;if visited() is 1&gt;&gt;Arrivi davanti alla porta del tuo ufficio. La serratura è digitale, c&#39;è una tastiera alfanumerica e un piccolo schermo.
 Devi digitare il codice di accesso. Sam te l&#39;ha scritto su un foglietto, ce l&#39;hai in tasca.
