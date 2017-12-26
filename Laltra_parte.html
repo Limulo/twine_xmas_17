@@ -285,7 +285,9 @@ h6.neon{
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">Config.history.controls=false;
+
 
 
 
@@ -309,13 +311,7 @@ Oramai sei fuori da treno e stazione. Davanti a te un intrico di strade si diram
 Fermi un taxi al volo, non hai volgia di camminare, nè di perdere altro tempo. Vuoi solo fare la consegna e poi andare dritto a casa.
 
 &quot;Dove?&quot; - il tassista è anche più stanco di te -
-&quot;F.H. House&quot; - rispondi, e sai che non serve indirizzo. Tutti sanno dov&#39;è [[F.H. House.|ch1]]
-
-
-
-&lt;&lt;script&gt;&gt;
-UIBar.unstow();
-&lt;&lt;/script&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="ch1" tags="" position="322,51" size="100,100">&lt;&lt;set _howmuch to [&quot;tutto&quot;, &quot;13 crediti&quot;, &quot;12.5 crediti&quot;]&gt;&gt;
+&quot;F.H. House&quot; - rispondi, e sai che non serve indirizzo. Tutti sanno dov&#39;è [[F.H. House.|ch1]]</tw-passagedata><tw-passagedata pid="2" name="ch1" tags="" position="322,51" size="100,100">&lt;&lt;set _howmuch to [&quot;tutto&quot;, &quot;13 crediti&quot;, &quot;12.5 crediti&quot;]&gt;&gt;
 &lt;&lt;set _phrase to [&quot;Gli lasci&quot;, &quot;Decidi di dargli&quot;, &quot;Gli dai&quot;]&gt;&gt;
 Il tassista ti lascia all&#39;angolo della strada. Una pioggerella leggera inizia a cadere grigia e sporca. Non ha fatto scattare il tachimetro alla partenza della corsa, ma anche se lo hai notato non gli hai detto nulla.
 
@@ -460,23 +456,24 @@ Lungo la strada familiare da F.H. House a casa c&#39;è il //vecchio Marley//, u
 
 Ah, ecco la cabina per il [[prelevamento crediti]]</tw-passagedata><tw-passagedata pid="13" name="casa" tags="" position="727,519" size="100,100">&lt;&lt;audio &quot;rain&quot; stop&gt;&gt;
 &lt;&lt;if visited(&quot;tossico&quot;)is 1 or visited(&quot;Marley&quot;) is 1&gt;&gt;
-Appena rientri ti liberi dei vestiti, ti fai una doccia e ti butti a letto. Ti senti fortunato per non essere mai caduto nella trappola delle lenti. Le hai provate una volta e hai giurato che mai più ci avresti rifiutato. Questo è l&#39;ultimo pensiero prima di addormentarti. Devi riposare, [[domani|day2]] sarà impegnativo.
+Appena rientri ti liberi dei vestiti, ti fai una doccia e ti butti a letto. Ti senti fortunato per non essere mai caduto nella trappola delle lenti. Le hai provate una volta e hai giurato che mai più ci avresti ritentato. Questo è l&#39;ultimo pensiero prima di addormentarti. Devi riposare, [[domani|day2]] sarà impegnativo.
 &lt;&lt;elseif visited(&quot;Guardi la televisione&quot;) is 0&gt;&gt;
-Appena rientri ti liberi dei vestiti, ti fai una doccia. Mentre ti prepari qualcosa da mangiare accendi il televisore. Stanno trasmettendo un documentario sul canale culturale. [[Ti metti a guardarlo.|Guardi la televisione]]
+Appena rientri ti liberi dei vestiti, ti fai una doccia. Mentre ti prepari qualcosa da mangiare accendi l&#39; olovisore. Stanno trasmettendo un documentario sul canale culturale. [[Ti metti a guardarlo.|Guardi la televisione]]
 &lt;&lt;else&gt;&gt;Ti senti fortunato per non essere mai caduto nella trappola delle lenti. Le hai provate una volta e hai giurato che mai più ci avresti rifiutato. Questo è l&#39;ultimo pensiero prima di addormentarti. Devi riposare, [[domani|day2]] sarà impegnativo.&lt;&lt;/if&gt;&gt;
  </tw-passagedata><tw-passagedata pid="14" name="cammino" tags="" position="871,519" size="100,100">Ti incammini per strada. 
 Una serie di pensieri si accavallano uno all&#39;altro mentre avanzi con il bavero dell&#39;impermeabile alzato e le mani ficcate nelle tasche&lt;&lt;if $payment eq &quot;tutto&quot;&gt;&gt;vuote.&lt;&lt;else&gt;&gt; dove le poche monete rimaste tintinnano ad ogni passo.&lt;&lt;/if&gt;&gt;
 
-Sei così sovrapensiero che non ti accorgi che stai per calpestare una [[massa scura|tossico]] sul marciapiede davanti a te.</tw-passagedata><tw-passagedata pid="15" name="day2" tags="" position="1230,193" size="100,100">Eccoti di nuovo alla F.H. House. Sei nella satanza 12 insieme a Sam, il tuo repsponsabile, o, per meglio dire, il tuo nuovo socio.
+Sei così sovrapensiero che non ti accorgi che stai per calpestare una [[massa scura|tossico]] sul marciapiede davanti a te.</tw-passagedata><tw-passagedata pid="15" name="day2" tags="" position="1230,193" size="100,100">Eccoti di nuovo alla F.H. House. Sei nella stanza 12 insieme a Sam, il tuo repsponsabile, o, per meglio dire, il tuo nuovo socio.
 
 &lt;&lt;if visited(&quot;riflettere&quot;) is 1&gt;&gt;Accetti il lavoro, più per curiosità che altro.&lt;&lt;/if&gt;&gt;
 
-Non appena entri  Sam ti sommerge di scartoffie, ti riempie la testa di procedure che dimentichi appena te le riferisce e ti spiega le dinamich interne agli uffici del palazzo.
-Ti scrive una serie di password e procedure di accesso su un foglietto che prontamente infili nelle tue tasche.
+Non appena entri  Sam ti sommerge di scartoffie, ti riempie la testa di procedure che dimentichi appena te le riferisce e ti spiega le dinamiche interne agli uffici del palazzo.
+Ti scrive una serie di password e procedure di accesso su foglietti che prontamente infili nelle tue tasche.
 
+&lt;&lt;if visited(&quot;accetti&quot;) is 1 or visited(&quot;riflettere&quot;) is 1&gt;&gt;
 Tutto quello che vuoi sapere, in realtà, è cosa sta succedendo. Cosa c&#39;è sotto.
-
-&lt;&lt;if visited(&quot;accetti&quot;) is 1 or visited(&quot;riflettere&quot;) is 1&gt;&gt;[[Gli chiedi delucidazioni riguardo al lavoro|spiega]]&lt;&lt;/if&gt;&gt;
+[[Gli chiedi delucidazioni riguardo al lavoro|spiega]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;else&gt;&gt;Non ti resta che andare a vedere il tuo nuovo [[ufficio|tuo ufficio]] &lt;&lt;/if&gt;&gt;
 
 
 
@@ -580,18 +577,16 @@ Lo scansi all&#39;ultimo momento...
 Lo sguardo perso e gli occhi arrossati ti danno la risposta: lenti. Hai incontrato un tossico, una persona che ha sviluppato dipendenza da una realtà che non esiste. Che senso abbia poi chimarla realtà proprio non lo sai.
 
 Avanzi lungo la strada.
-Dopo qualche isolato una vetrinaluminosa attrae la tua attenzione. E&#39; un rivenditore di televisori 3D. Sono tutti sintonizzati su un programma educativo. Un documnetario sulle lenti.
-
-[[Guardi la televisione]] </tw-passagedata><tw-passagedata pid="21" name="Guardi la televisione" tags="" position="565,735" size="100,100">In televisione danno un documentario sulla storia delle lenti.
+Dopo qualche isolato una vetrina luminosa attrae la tua attenzione. E&#39; un rivenditore di oloviori. Sono tutti sintonizzati su un programma educativo: [[un documentario sulle lenti.|Guardi la televisione]] </tw-passagedata><tw-passagedata pid="21" name="Guardi la televisione" tags="" position="565,735" size="100,100">In olovisione &lt;&lt;if visited(&quot;Marley&quot;) gt 0&gt;&gt;, e a quanto pare anche in televisione,&lt;&lt;/if&gt; danno un documentario sulla storia delle lenti.
 Sicuranmente c&#39;è dietro il gruppo comunicazione alla F.H. House.
-Devono raibilitare l&#39;immagine del prodotto di punta, le lenti. E sono pronti ad usare qualsiasi mezzo.
+Devono riabilitare l&#39;immagine del prodotto di punta, le lenti. E sono pronti ad usare qualsiasi mezzo.
 
 Il documentario mostra la nascita della tecnologia legata alle lenti. Scienziati ed ingegneri che quasi un secolo fa iniziano ad armeggiare con la realtà virtuale e aumentata.
-Ci sono filmati d&#39;epoca in cui si possono vedere i primi smartphone che consentono di sperimenare con questa tecnologia.
+Ci sono filmati d&#39;epoca in cui si possono vedere i primi smartphone che consentono di sperimentare con questa tecnologia.
 Ma è solo dopo qualche decennio che si è capito che usare uno schermo di computer o uno smartphone non dà l&#39;impatto necessario.
 Solo quando le grandi multinazionali hanno deciso di fondersi in un&#39;unica grande lobby sono iniziati gli esperimenti e la ricerca. Almeno qui in occidente.
 E le lenti ne sono state il risultato.
-Innocue lenti a contatto capaci di collegarsi tramite scanning del dna alla banca dati centrale e caricare direttamente ul nervo ottico le proprie applicazioni di realtà virtuale.
+Innocue lenti a contatto capaci di collegarsi tramite scanning del dna alla banca dati centrale e caricare direttamente sul nervo ottico le proprie applicazioni di realtà virtuale.
 
 Alcune di queste inizialmente dovevano avere uno scopo pratico. Come i programmi di simulazione per gli architetti che permetteva loro di progettare direttamente in loco i loro edifici.
 Ma praticamente da subito la tecnologia è stata usata come fonte di intratenimento.
@@ -600,7 +595,7 @@ All&#39;inizio si consigliava di non tenere le lenti addosso per più di 4 ore. 
 
 Dicono che le lenti possono essere indossate e che se disattivate non hanno nessun tipo d utilizzo.
 
-Guardi le immagini coloratissime delle prime pubblicità delle lenti su quello sgagherato schermo LCD. &lt;&lt;if visited(&quot;Marley&quot;)&gt;&gt;E&#39; strano quando sei abituato a vedere le immagini in 3 dimensioni.&lt;&lt;/if&gt;&gt;
+Guardi le immagini coloratissime delle prime pubblicità delle lenti su quello sgangherato schermo LCD. &lt;&lt;if visited(&quot;Marley&quot;)&gt;&gt;E&#39; strano quando sei abituato a vedere le immagini in 3 dimensioni.&lt;&lt;/if&gt;&gt;
 
 Al centro dello schermo spicca il logo della lobby: F.H.
 Facebook Holding.
